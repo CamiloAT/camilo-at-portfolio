@@ -52,7 +52,7 @@ const Story = () => {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              No construyo software. Construyo experiencias que la gente recuerda.
+              Hablemos un poco sobre mí.
             </motion.p>
 
             <motion.p
@@ -62,10 +62,7 @@ const Story = () => {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, delay: 0.35 }}
             >
-              Soy Camilo Andrés Arias Tenjo, Ingeniero de Sistemas con una obsesión
-              por los detalles que nadie pide pero todos notan. Creo que la tecnología
-              no es solo funcionalidad — es la diferencia entre algo que funciona
-              y algo que se siente bien.
+              Mi nombre es Camilo Andrés Arias Tenjo, Ingeniero de Sistemas y Computación de la Universidad Pedagógica y Tecnológica de Colombia (UPTC). Me considero un apasionado por la tecnología, siempre en busca de nuevos retos y oportunidades para seguir aprendiendo y creciendo profesionalmente. 
             </motion.p>
 
             <motion.p
@@ -75,10 +72,7 @@ const Story = () => {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              Cada proyecto que toco empieza con una pregunta: "¿Cómo hago que esto
-              se sienta inevitable?" No me conformo con lo que ya existe. Busco la
-              versión que nadie ha visto todavía, la que hace que el usuario se detenga
-              y piense: "esto es diferente."
+              Desde muy joven siempre me he considerado una persona bastante curiosa, que siempre lleva sus ambiciones al límite, y siempre intenta completar sus objetivos de la mejor forma posible sin importar los contratiempos que se presenten en el camino.
             </motion.p>
           </motion.div>
 
@@ -92,11 +86,9 @@ const Story = () => {
             >
               <div className="story__visual-frame">
                 <div className="story__visual-inner">
-                  <span className="story__visual-text">CA</span>
-                  <span className="story__visual-year">2026</span>
+                  <span className="story__visual-placeholder" />
                 </div>
               </div>
-              <div className="story__visual-accent" />
             </motion.div>
 
             <motion.div
@@ -108,7 +100,7 @@ const Story = () => {
             >
               <div className="story__stat">
                 <span className="story__stat-number">4+</span>
-                <span className="story__stat-label">Años de experiencia</span>
+                <span className="story__stat-label">Años de carrera</span>
               </div>
               <div className="story__stat">
                 <span className="story__stat-number">∞</span>
