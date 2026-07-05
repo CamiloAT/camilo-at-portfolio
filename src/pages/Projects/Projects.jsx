@@ -5,6 +5,27 @@ import './Projects.css'
 
 const MORE_PROJECTS = [
   {
+    id: 'unfollow-spy',
+    title: 'UnfollowSpy',
+    category: 'Frontend · React · Vite',
+    year: '2026',
+    description: 'Herramienta 100% local y segura que audita tus seguidores de Instagram directamente en el navegador.',
+    fullDescription: 'UnfollowSpy es una herramienta 100% local y segura que audita los seguidores de Instagram directamente en el navegador. El usuario sube su exportación oficial de Meta y la app cruza las listas de seguidores y seguidos al instante, sin contraseñas, sin servidores, sin riesgo de baneos. Incluye análisis cruzado para detectar "traidores", seguimiento de tiempo con marcas UNIX, reportes PDF descargables, modo oscuro con persistencia en localStorage, ordenamiento y búsqueda inteligente, y un tutorial interactivo de 22 pasos.\n\nNació de una necesidad personal, quería ver quién lo dejaba de seguir en Instagram pero no había herramientas gratuitas o que no implicaran baneos de la cuenta. Fue el primer proyecto personal más allá de lo académico, y enseñó lo que significa construir algo desde cero para resolver un problema real.',
+    logo: '/projects/unfollow-spy/unfollow-spy-logo.png',
+    accent: '#e1306c',
+    tags: ['React', 'Vite', 'jsPDF', 'Lucide', 'React Router'],
+    collaborators: [],
+    github: 'https://github.com/CamiloAT/UnfollowSpy',
+    demo: '',
+    images: [
+      '/projects/unfollow-spy/app-photo-1.webp',
+      '/projects/unfollow-spy/app-photo-2.webp',
+      '/projects/unfollow-spy/app-photo-3.webp',
+      '/projects/unfollow-spy/app-photo-4.webp',
+      '/projects/unfollow-spy/app-photo-5.webp',
+    ],
+  },
+  {
     id: 'sentinel',
     title: 'Sentinel API',
     category: 'Backend · Seguridad',
@@ -118,7 +139,7 @@ const Projects = () => {
             </svg>
             Volver al portafolio
           </Link>
-          <h1 className="projects-page__title">Todos mis proyectos</h1>
+          <h1 className="projects-page__title">Otros proyectos</h1>
           <p className="projects-page__subtitle">Una vista un poco más amplia de los proyectos más relevantes que he desarrollado a lo largo de mi aprendizaje.</p>
         </motion.div>
 
@@ -216,11 +237,22 @@ const Projects = () => {
 
               <div className="projects-page__modal-header">
                 <span className="projects-page__modal-category">{selectedProject.category}</span>
-                <h3 className="projects-page__modal-title">{selectedProject.title}</h3>
+                <div className="projects-page__modal-title-row">
+                  <h3 className="projects-page__modal-title">{selectedProject.title}</h3>
+                  {selectedProject.logo && <img src={selectedProject.logo} alt="" className="projects-page__modal-logo" />}
+                </div>
                 <span className="projects-page__modal-year">{selectedProject.year}</span>
               </div>
 
               <div className="projects-page__modal-body">
+                <div className="projects-page__modal-info">
+                  <div className="projects-page__modal-desc">
+                    {selectedProject.fullDescription.split('\n\n').map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+
                 {selectedProject.images.length > 0 && (
                   <div className="projects-page__modal-carousel">
                     <button className="projects-page__modal-arrow projects-page__modal-arrow--left" onClick={prevImage}>‹</button>
@@ -244,7 +276,27 @@ const Projects = () => {
                   </div>
                 )}
 
-                <p className="projects-page__modal-desc">{selectedProject.fullDescription}</p>
+                {selectedProject.collaborators && selectedProject.collaborators.length > 0 && (
+                  <div className="projects-page__modal-collaborators">
+                    <span className="projects-page__modal-collaborators-title">Compañeros de trabajo</span>
+                    <div className="projects-page__modal-collaborators-list">
+                      {selectedProject.collaborators.map((collab) => (
+                        <a
+                          key={collab.github}
+                          href={collab.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="projects-page__modal-collaborator"
+                        >
+                          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                          {collab.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="projects-page__modal-tags">
                   {selectedProject.tags.map((tag) => (

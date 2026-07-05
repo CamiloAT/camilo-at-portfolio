@@ -1,5 +1,5 @@
 :root {
-  /* Color Palette — Cinematic Warm Dark */
+  /* Color Palette - Cinematic Warm Dark */
   --bg-deep: #0a0a0a;
   --bg-surface: #141414;
   --bg-elevated: #1c1c1c;
@@ -104,7 +104,7 @@ img {
   border: 0;
 }
 
-/* Film grain overlay — subtle texture across the entire site */
+/* Film grain overlay - subtle texture across the entire site */
 #root::after {
   content: '';
   position: fixed;

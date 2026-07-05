@@ -1,11 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import bytedentalLogo from '../../assets/projects/byte-dental/bytedental-logo.png'
-import kiruLogo from '../../assets/projects/kiru/kiru-logo.png'
-import deckroyaleLogo from '../../assets/projects/deck-royale/deck-royale-logo.png'
-import penguinLogo from '../../assets/projects/emperator-penguin-survival-sim/emperator-penguir-survival-sim-logo.png'
-import injectfillLogo from '../../assets/projects/inject-and-fill/inject-and-fill-logo.png'
 import './Work.css'
 
 const PROJECTS = [
@@ -16,7 +11,7 @@ const PROJECTS = [
     year: '2025',
     description: 'Sistema de gestión de clínicas dentales con historiales clínicos SOAP, control de roles y auditoría automatizada.',
     fullDescription: 'ByteDental es una plataforma full-stack diseñada para la clínica Oral Center White, orientada a la gestión integral de consultorios dentales. El sistema permite administrar registros de pacientes, crear historiales clínicos en formato SOAP, dar seguimiento a tratamientos, controlar el acceso por roles (Administrador, Doctor, Asistente, Auditor) y cuenta con un sistema de auditoría automatizada mediante triggers de PostgreSQL. Incluye autenticación con Google OAuth, recuperación de contraseña por OTP, generación de reportes en PDF/JSON, dashboard de estadísticas y notificaciones por email.\n\nEste fue mi primer proyecto desarrollado desde cero: desde la identificación de aspectos a mejorar en la clínica, la elicitación de requisitos con el cliente, el diseño de la arquitectura, el desarrollo iterativo bajo una metodología ágil con roles intercambiables (frontend, backend, QA, DevOps y líder de proyecto) ejecutado a lo largo de 4 sprints, hasta la entrega formal y sustentación del sistema completo, incluyendo toda la documentación, pruebas y validaciones correspondientes.',
-    logo: bytedentalLogo,
+    logo: '/projects/byte-dental/bytedental-logo.png',
     accent: '#60a5fa',
     tags: ['FastAPI', 'React', 'PostgreSQL', 'Docker', 'Firebase'],
     collaborators: [
@@ -48,7 +43,7 @@ const PROJECTS = [
     year: '2026',
     description: 'Sistema completo para convertir letra manuscrita en un archivo .ttf utilizable en cualquier aplicación.',
     fullDescription: 'Kiru es una aplicación web que procesa una imagen de tu escritura a mano, segmenta automáticamente cada carácter, lo vectoriza y genera un archivo .ttf listo para instalar y usar en cualquier aplicación del sistema operativo. El flujo incluye generador de plantillas con diferentes conjuntos de caracteres, carga de imágenes fotografiadas, editor interactivo de glifos con herramientas de dibujar, borrar, mover y escalar, un motor de vectorización que convierte bitmaps en contornos suavizados, y un sandbox en tiempo real para previsualizar la fuente generada con textos de ejemplo, tamaños ajustables y descarga directa del archivo.\n\nUn proyecto personal que surgió de una idea repentina y que terminó convirtiéndose en uno de los proyectos que más cariño le tengo. Nació de la curiosidad por combinar procesamiento de imágenes con tipografía digital, y fue evolucionando hasta convertirse en una aplicación completa con arquitectura desacoplada: un backend en FastAPI con OpenCV y fontTools para el procesamiento de imágenes y generación de fuentes, y un frontend en React con Vite, Zustand para el estado global y Framer Motion para animaciones.',
-    logo: kiruLogo,
+    logo: '/projects/kiru/kiru-logo.png',
     accent: '#a855f7',
     tags: ['FastAPI', 'React', 'OpenCV', 'fontTools', 'Zustand'],
     collaborators: [],
@@ -69,7 +64,7 @@ const PROJECTS = [
     year: '2026',
     description: 'Juego de poker Texas Hold\'em multijugador en tiempo real con salas privadas, fichas de casino y avatares animados.',
     fullDescription: 'Deck Royale es un juego de poker Texas Hold\'em multijugador en tiempo real que permite crear salas privadas con nombre personalizado, competir contra amigos con fichas virtuales en COP, y disfrutar de avatares animados, fichas de casino y un sistema completo de poker con side pots, temporizador de turno y revelaciones dramáticas de all-in.\n\nUn proyecto personal que nació de la inquietud por explorar Vue como nueva tecnología frontend y de la curiosidad de experimentar con WebSockets para crear una experiencia de poker real-time con amigos. El sistema incluye sala de espera con configuración de blinds y buy-in, avatares SVG animados con 4 tipos distintos y personalización, temporizador de turno de 60 segundos con semáforo de color, reconexión inteligente con persistencia en localStorage, y una interfaz responsive con animaciones de entrada, transiciones entre manos, celebración de victoria con confetti y modal de fin de juego con estadísticas detalladas e historial.',
-    logo: deckroyaleLogo,
+    logo: '/projects/deck-royale/deck-royale-logo.png',
     accent: '#eab308',
     tags: ['Nuxt', 'Vue', 'Socket.IO', 'TypeScript', 'Nitro'],
     collaborators: [],
@@ -91,7 +86,7 @@ const PROJECTS = [
     year: '2026',
     description: 'Simulación basada en agentes del comportamiento de huddles de pingüinos emperador durante el invierno antártico.',
     fullDescription: 'Emperor Penguin Survival Sim es una aplicación web de modelado basado en agentes (ABM) que simula el comportamiento de huddles de pingüinos emperador durante los 92 días del invierno antártico. El modelo captura la termindividual de cada pingüino, las dinámicas de rotación del huddle y el riesgo estocástico de pérdida de huevos y congelación en el hielo expuesto. Incluye un motor de simulación con agentes individuales que poseen temperatura corporal, reservas de grasa, energía y estado de vida, vista dual en 2D Canvas y 3D con Three.js, dashboard en tiempo real, gráficas históricas con Recharts, diagrama causal de fljo y documentación completa del modelo con ecuaciones y metodología PASSI.\n\nProyecto de asignatura de Simulación enfocado en sistemas multiagentes. Fue mi primer contacto con la librería Three.js, la cual me pareció muy interesante y versátil para muchos tipos de proyectos, desde visualizaciones científicas hasta experiencias inmersivas 3D.',
-    logo: penguinLogo,
+    logo: '/projects/emperator-penguin-survival-sim/emperator-penguir-survival-sim-logo.png',
     accent: '#f97316',
     tags: ['React', 'Three.js', 'Recharts', 'React Flow', 'Vite'],
     collaborators: [
@@ -115,7 +110,7 @@ const PROJECTS = [
     year: '2026',
     description: 'Extensión de navegador que automatiza el rellenado de formularios con perfiles personalizados.',
     fullDescription: 'Inject and Fill es una extensión de navegador para Chrome, Edge y Brave que automatiza el rellenado de formularios con perfiles personalizados. Detecta campos de formulario y botones en cualquier página web, permite mapearlos a valores específicos y ejecutar toda la secuencia con un solo clic, soportando inputs de texto, selects, checkboxes, radio buttons y clics en botones.\n\nNació de la necesidad de rellenar formularios de forma rápida y directamente en el navegador. Fue mi primera toma de contacto con el desarrollo de extensiones de navegador, explorando las capacidades de Manifest V3, el uso de side panels, content scripts para inyectar scripts en páginas web y chrome.storage.local para persistencia de datos. Incluye detección inteligente de campos, selector visual de elementos, dropdowns personalizados, edición de perfiles con drag-and-drop y motor de ejecución secuencial o simultáneo con simulación de eventos de frameworks como React, Angular y Vue.',
-    logo: injectfillLogo,
+    logo: '/projects/inject-and-fill/inject-and-fill-logo.png',
     accent: '#2563eb',
     tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'HTML', 'CSS'],
     collaborators: [],
@@ -163,11 +158,13 @@ const Work = () => {
     setSelectedProject(project)
     setCurrentImageIndex(0)
     document.body.style.overflow = 'hidden'
+    document.querySelector('.app')?.classList.add('app--modal-open')
   }
 
   const closeModal = () => {
     setSelectedProject(null)
     document.body.style.overflow = ''
+    document.querySelector('.app')?.classList.remove('app--modal-open')
   }
 
   const nextImage = () => {
@@ -346,7 +343,7 @@ const Work = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <Link to="/projects" className="work__all-projects-btn">
-            Todos mis proyectos
+            Otros proyectos
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14" />
               <polyline points="12 5 19 12 12 19" />

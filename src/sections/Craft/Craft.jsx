@@ -86,7 +86,7 @@ const Craft = () => {
             <p className="craft__quote-text">
               "El buen diseño es invisible. El great design es inevitable."
             </p>
-            <footer className="craft__quote-attr">— Mi filosofía de desarrollo</footer>
+            <footer className="craft__quote-attr">Mi filosofía de desarrollo</footer>
           </blockquote>
         </motion.div>
       </div>

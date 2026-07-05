@@ -160,7 +160,7 @@ const Outro = () => {
         <div className="outro__footer-content">
           <div className="outro__footer-left">
             <span className="outro__footer-name">Camilo AT</span>
-            <span className="outro__footer-copy">© 2026 — Todos los derechos reservados</span>
+            <span className="outro__footer-copy">© 2026 · Todos los derechos reservados</span>
           </div>
           <div className="outro__footer-right">
             <span className="outro__footer-built">

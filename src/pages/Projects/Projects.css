@@ -10,7 +10,7 @@
 }
 
 .projects-page__header {
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-lg);
   position: relative;
 }
 
@@ -207,7 +207,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   max-height: 85vh;
   overflow-y: auto;
   position: relative;
@@ -259,6 +259,20 @@
   margin-bottom: var(--space-xs);
 }
 
+.projects-page__modal-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.projects-page__modal-logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .projects-page__modal-year {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -271,6 +285,7 @@
 
 .projects-page__modal-carousel {
   position: relative;
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
 
@@ -350,11 +365,59 @@
   margin-bottom: var(--space-lg);
 }
 
+.projects-page__modal-desc p {
+  text-align: justify;
+  margin-bottom: var(--space-md);
+}
+
+.projects-page__modal-desc p:last-child {
+  margin-bottom: 0;
+}
+
 .projects-page__modal-tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
   margin-bottom: var(--space-xl);
+}
+
+.projects-page__modal-collaborators {
+  margin-bottom: var(--space-lg);
+}
+
+.projects-page__modal-collaborators-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.projects-page__modal-collaborators-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.projects-page__modal-collaborator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.35em 0.8em;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.projects-page__modal-collaborator:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .projects-page__modal-tag {
