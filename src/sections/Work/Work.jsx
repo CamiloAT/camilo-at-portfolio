@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import bytedentalLogo from '../../assets/projects/byte-dental/bytedental-logo.png'
 import kiruLogo from '../../assets/projects/kiru/kiru-logo.png'
+import deckroyaleLogo from '../../assets/projects/deck-royale/deck-royale-logo.png'
 import './Work.css'
 
 const PROJECTS = [
@@ -42,8 +43,8 @@ const PROJECTS = [
     title: 'Kiru',
     category: 'Fullstack · FastAPI · React',
     year: '2026',
-    description: 'Sistema para convertir letra manuscrita en un archivo .ttf utilizable.',
-    fullDescription: 'Kiru procesa una imagen de tu escritura a mano, segmenta cada carácter, lo vectoriza y genera un archivo .ttf listo para usar en cualquier aplicación. Incluye un editor de glifos con herramientas de dibujar, borrar, mover y escalar, un motor de vectorización que convierte bitmaps en contornos suavizados, y un sandbox en tiempo real para previsualizar la fuente generada con textos de ejemplo, formatos y colores personalizables.\n\nUn proyecto personal que surgió de una idea repentina y que terminó convirtiéndose en uno de los proyectos que más cariño le tengo. Nació de la curiosidad por combinar procesamiento de imágenes con tipografía digital, y fue evolucionando hasta convertirse en una aplicación completa con arquitectura desacoplada: un backend en FastAPI con OpenCV y fontTools, y un frontend en React con Vite, Zustand y Framer Motion.',
+    description: 'Sistema completo para convertir letra manuscrita en un archivo .ttf utilizable en cualquier aplicación.',
+    fullDescription: 'Kiru es una aplicación web que procesa una imagen de tu escritura a mano, segmenta automáticamente cada carácter, lo vectoriza y genera un archivo .ttf listo para instalar y usar en cualquier aplicación del sistema operativo. El flujo incluye generador de plantillas con diferentes conjuntos de caracteres, carga de imágenes fotografiadas, editor interactivo de glifos con herramientas de dibujar, borrar, mover y escalar, un motor de vectorización que convierte bitmaps en contornos suavizados, y un sandbox en tiempo real para previsualizar la fuente generada con textos de ejemplo, tamaños ajustables y descarga directa del archivo.\n\nUn proyecto personal que surgió de una idea repentina y que terminó convirtiéndose en uno de los proyectos que más cariño le tengo. Nació de la curiosidad por combinar procesamiento de imágenes con tipografía digital, y fue evolucionando hasta convertirse en una aplicación completa con arquitectura desacoplada: un backend en FastAPI con OpenCV y fontTools para el procesamiento de imágenes y generación de fuentes, y un frontend en React con Vite, Zustand para el estado global y Framer Motion para animaciones.',
     logo: kiruLogo,
     accent: '#a855f7',
     tags: ['FastAPI', 'React', 'OpenCV', 'fontTools', 'Zustand'],
@@ -60,16 +61,25 @@ const PROJECTS = [
   },
   {
     id: 3,
-    title: 'Verde Urbano',
-    category: 'Frontend · UX/UI',
-    year: '2025',
-    description: 'Aplicación web para rastreo de huella de carbono personal.',
-    fullDescription: 'Aplicación web para rastreo de huella de carbono personal. Visualización de datos ambientales con gráficas interactivas y gamificación. Los usuarios pueden registrar sus actividades diarias, comparar con la comunidad y ganar logros por acciones sostenibles.',
-    accent: '#6b8a5e',
-    tags: ['React', 'D3.js', 'Tailwind', 'Supabase'],
-    github: 'https://github.com/camiloat/verde-urbano',
-    demo: '',
-    images: ['/placeholder-1.svg', '/placeholder-2.svg', '/placeholder-3.svg'],
+    title: 'Deck Royale',
+    category: 'Multiplayer · Nuxt · Vue',
+    year: '2026',
+    description: 'Juego de poker Texas Hold\'em multijugador en tiempo real con salas privadas, fichas de casino y avatares animados.',
+    fullDescription: 'Deck Royale es un juego de poker Texas Hold\'em multijugador en tiempo real que permite crear salas privadas con nombre personalizado, competir contra amigos con fichas virtuales en COP, y disfrutar de avatares animados, fichas de casino y un sistema completo de poker con side pots, temporizador de turno y revelaciones dramáticas de all-in.\n\nUn proyecto personal que nació de la inquietud por explorar Vue como nueva tecnología frontend y de la curiosidad de experimentar con WebSockets para crear una experiencia de poker real-time con amigos. El sistema incluye sala de espera con configuración de blinds y buy-in, avatares SVG animados con 3 tipos y personalización, temporizador de turno de 60 segundos con semáforo de color, reconexión inteligente con persistencia en localStorage, y una interfaz responsive con animaciones de entrada, transiciones entre manos, celebración de victoria con confetti y modal de fin de juego con estadísticas detalladas e historial.',
+    logo: deckroyaleLogo,
+    accent: '#eab308',
+    tags: ['Nuxt', 'Vue', 'Socket.IO', 'TypeScript', 'Nitro'],
+    collaborators: [],
+    github: 'https://github.com/CamiloAT/deck-royale',
+    demo: 'https://deck-royale.onrender.com/',
+    images: [
+      '/projects/deck-royale/app-photo-1.webp',
+      '/projects/deck-royale/app-photo-2.webp',
+      '/projects/deck-royale/app-photo-3.webp',
+      '/projects/deck-royale/app-photo-4.webp',
+      '/projects/deck-royale/app-photo-5.webp',
+      '/projects/deck-royale/app-photo-6.webp',
+    ],
   },
   {
     id: 4,
