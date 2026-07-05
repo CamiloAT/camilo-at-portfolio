@@ -212,7 +212,7 @@
 .work__project-carousel-inner {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/7;
   overflow: hidden;
   border: 1px solid var(--border);
 }
@@ -406,7 +406,7 @@
 
 .work__modal-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/7;
   border: 1px solid var(--border);
   overflow: hidden;
 }
