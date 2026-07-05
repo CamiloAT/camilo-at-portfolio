@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import bytedentalLogo from '../../assets/projects/byte-dental/bytedental-logo.png'
 import kiruLogo from '../../assets/projects/kiru/kiru-logo.png'
 import deckroyaleLogo from '../../assets/projects/deck-royale/deck-royale-logo.png'
@@ -67,7 +68,7 @@ const PROJECTS = [
     category: 'Multiplayer · Nuxt · Vue',
     year: '2026',
     description: 'Juego de poker Texas Hold\'em multijugador en tiempo real con salas privadas, fichas de casino y avatares animados.',
-    fullDescription: 'Deck Royale es un juego de poker Texas Hold\'em multijugador en tiempo real que permite crear salas privadas con nombre personalizado, competir contra amigos con fichas virtuales en COP, y disfrutar de avatares animados, fichas de casino y un sistema completo de poker con side pots, temporizador de turno y revelaciones dramáticas de all-in.\n\nUn proyecto personal que nació de la inquietud por explorar Vue como nueva tecnología frontend y de la curiosidad de experimentar con WebSockets para crear una experiencia de poker real-time con amigos. El sistema incluye sala de espera con configuración de blinds y buy-in, avatares SVG animados con 3 tipos y personalización, temporizador de turno de 60 segundos con semáforo de color, reconexión inteligente con persistencia en localStorage, y una interfaz responsive con animaciones de entrada, transiciones entre manos, celebración de victoria con confetti y modal de fin de juego con estadísticas detalladas e historial.',
+    fullDescription: 'Deck Royale es un juego de poker Texas Hold\'em multijugador en tiempo real que permite crear salas privadas con nombre personalizado, competir contra amigos con fichas virtuales en COP, y disfrutar de avatares animados, fichas de casino y un sistema completo de poker con side pots, temporizador de turno y revelaciones dramáticas de all-in.\n\nUn proyecto personal que nació de la inquietud por explorar Vue como nueva tecnología frontend y de la curiosidad de experimentar con WebSockets para crear una experiencia de poker real-time con amigos. El sistema incluye sala de espera con configuración de blinds y buy-in, avatares SVG animados con 4 tipos distintos y personalización, temporizador de turno de 60 segundos con semáforo de color, reconexión inteligente con persistencia en localStorage, y una interfaz responsive con animaciones de entrada, transiciones entre manos, celebración de victoria con confetti y modal de fin de juego con estadísticas detalladas e historial.',
     logo: deckroyaleLogo,
     accent: '#eab308',
     tags: ['Nuxt', 'Vue', 'Socket.IO', 'TypeScript', 'Nitro'],
@@ -336,6 +337,22 @@ const Work = () => {
             </motion.article>
           ))}
         </div>
+
+        <motion.div
+          className="work__all-projects"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <Link to="/projects" className="work__all-projects-btn">
+            Todos mis proyectos
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
 
       {/* Modal */}
