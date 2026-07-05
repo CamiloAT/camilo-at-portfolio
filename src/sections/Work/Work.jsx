@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import bytedentalLogo from '../../assets/projects/byte-dental/bytedental-logo.png'
+import kiruLogo from '../../assets/projects/kiru/kiru-logo.png'
 import './Work.css'
 
 const PROJECTS = [
@@ -12,7 +13,7 @@ const PROJECTS = [
     description: 'Sistema de gestión de clínicas dentales con historiales clínicos SOAP, control de roles y auditoría automatizada.',
     fullDescription: 'ByteDental es una plataforma full-stack diseñada para la clínica Oral Center White, orientada a la gestión integral de consultorios dentales. El sistema permite administrar registros de pacientes, crear historiales clínicos en formato SOAP, dar seguimiento a tratamientos, controlar el acceso por roles (Administrador, Doctor, Asistente, Auditor) y cuenta con un sistema de auditoría automatizada mediante triggers de PostgreSQL. Incluye autenticación con Google OAuth, recuperación de contraseña por OTP, generación de reportes en PDF/JSON, dashboard de estadísticas y notificaciones por email.\n\nEste fue mi primer proyecto desarrollado desde cero: desde la identificación de aspectos a mejorar en la clínica, la elicitación de requisitos con el cliente, el diseño de la arquitectura, el desarrollo iterativo bajo una metodología ágil con roles intercambiables (frontend, backend, QA, DevOps y líder de proyecto) ejecutado a lo largo de 4 sprints, hasta la entrega formal y sustentación del sistema completo, incluyendo toda la documentación, pruebas y validaciones correspondientes.',
     logo: bytedentalLogo,
-    accent: '#c4956a',
+    accent: '#60a5fa',
     tags: ['FastAPI', 'React', 'PostgreSQL', 'Docker', 'Firebase'],
     collaborators: [
       { name: 'Ronald Samir Molinares Sanabria', github: 'https://github.com/Ronaldmolinares' },
@@ -38,16 +39,24 @@ const PROJECTS = [
   },
   {
     id: 2,
-    title: 'Sentinel API',
-    category: 'Backend · Seguridad',
-    year: '2025',
-    description: 'Sistema de monitoreo y alertas para infraestructura cloud.',
-    fullDescription: 'Sistema de monitoreo y alertas para infraestructura cloud. Detección de anomalías con machine learning y notificaciones en tiempo real. Incluye dashboard de métricas, sistema de reglas personalizables y integración con múltiples proveedores cloud.',
-    accent: '#8b6914',
-    tags: ['Python', 'FastAPI', 'Redis', 'Docker'],
-    github: 'https://github.com/camiloat/sentinel-api',
+    title: 'Kiru',
+    category: 'Fullstack · FastAPI · React',
+    year: '2026',
+    description: 'Sistema para convertir letra manuscrita en un archivo .ttf utilizable.',
+    fullDescription: 'Kiru procesa una imagen de tu escritura a mano, segmenta cada carácter, lo vectoriza y genera un archivo .ttf listo para usar en cualquier aplicación. Incluye un editor de glifos con herramientas de dibujar, borrar, mover y escalar, un motor de vectorización que convierte bitmaps en contornos suavizados, y un sandbox en tiempo real para previsualizar la fuente generada con textos de ejemplo, formatos y colores personalizables.\n\nUn proyecto personal que surgió de una idea repentina y que terminó convirtiéndose en uno de los proyectos que más cariño le tengo. Nació de la curiosidad por combinar procesamiento de imágenes con tipografía digital, y fue evolucionando hasta convertirse en una aplicación completa con arquitectura desacoplada: un backend en FastAPI con OpenCV y fontTools, y un frontend en React con Vite, Zustand y Framer Motion.',
+    logo: kiruLogo,
+    accent: '#a855f7',
+    tags: ['FastAPI', 'React', 'OpenCV', 'fontTools', 'Zustand'],
+    collaborators: [],
+    github: 'https://github.com/CamiloAT/kiru',
     demo: '',
-    images: ['/placeholder-1.svg', '/placeholder-2.svg', '/placeholder-3.svg'],
+    images: [
+      '/projects/kiru/app-photo-1.webp',
+      '/projects/kiru/app-photo-2.webp',
+      '/projects/kiru/app-photo-3.webp',
+      '/projects/kiru/app-photo-4.webp',
+      '/projects/kiru/app-photo-5.webp',
+    ],
   },
   {
     id: 3,
