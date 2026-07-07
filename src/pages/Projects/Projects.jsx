@@ -10,7 +10,7 @@ const MORE_PROJECTS = [
     category: 'Frontend · React · Vite',
     year: '2026',
     description: 'Herramienta 100% local y segura que audita tus seguidores de Instagram directamente en el navegador.',
-    fullDescription: 'UnfollowSpy es una herramienta 100% local y segura que audita los seguidores de Instagram directamente en el navegador. El usuario sube su exportación oficial de Meta y la app cruza las listas de seguidores y seguidos al instante, sin contraseñas, sin servidores, sin riesgo de baneos. Incluye análisis cruzado para detectar "traidores", seguimiento de tiempo con marcas UNIX, reportes PDF descargables, modo oscuro con persistencia en localStorage, ordenamiento y búsqueda inteligente, y un tutorial interactivo de 22 pasos.\n\nNació de una necesidad personal, quería ver quién lo dejaba de seguir en Instagram pero no había herramientas gratuitas o que no implicaran baneos de la cuenta. Fue el primer proyecto personal más allá de lo académico, y enseñó lo que significa construir algo desde cero para resolver un problema real.',
+    fullDescription: 'UnfollowSpy es una herramienta 100% local y segura que audita los seguidores de Instagram directamente en el navegador. El usuario sube su exportación oficial de Meta y la app cruza las listas de seguidores y seguidos al instante, sin contraseñas, sin servidores, sin riesgo de baneos. Incluye análisis cruzado para detectar "traidores", seguimiento de tiempo con marcas UNIX, reportes PDF descargables, modo oscuro con persistencia en localStorage, ordenamiento y búsqueda inteligente, y un tutorial interactivo de 22 pasos.\n\nNació de una necesidad personal, deseaba ver quién dejaba de seguirme en Instagram, pero no habían herramientas gratuitas o que no implicaran baneos de la cuenta. Fue el primer proyecto personal más allá de lo académico, y me enseñó lo que significa construir algo desde cero para resolver un problema real.',
     logo: '/projects/unfollow-spy/unfollow-spy-logo.png',
     accent: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)',
     tags: ['React', 'Vite', 'jsPDF', 'Lucide', 'React Router'],
@@ -31,7 +31,7 @@ const MORE_PROJECTS = [
     category: 'Desktop · Java · Swing',
     year: '2023',
     description: 'Juego clasico de Snake con dificultad progresiva, persistencia de puntajes y UI personalizada en Swing.',
-    fullDescription: 'Implementacion clasica del juego Snake en Java con dificultad progresiva, sistema de puntajes persistentes y una interfaz grafica construida desde cero con Swing. Incluye tres niveles de dificultad, velocidad progresiva, dashboard de historial y componentes UI personalizados.\n\nA pesar de que no fue el primero que desarrollo en Java, es un proyecto al que le tengo mucho cariño. Absolutamente todo fue escrito solo por mi, cada linea, cada palabra, cada decision fue desarrollada exclusivamente por mi. Lo recuerdo como el primer proyecto importante que hice.',
+    fullDescription: 'Implementacion clasica del juego Snake en Java con dificultad progresiva, sistema de puntajes persistentes y una interfaz grafica construida desde cero con Swing. Incluye tres niveles de dificultad, velocidad progresiva, dashboard de historial y componentes UI personalizados.\n\nA pesar de que no es el primero que desarrolle en Java, es un proyecto al que le tengo mucho cariño. Absolutamente todo fue escrito solo por mi, cada linea, cada palabra y cada decision fue desarrollada exclusivamente por mi desde cero. Lo recuerdo como el primer proyecto importante que realicé.',
     logo: '/projects/snake-game/snake-game-logo.png',
     accent: '#1e40af',
     tags: ['Java', 'Swing', 'Gson', 'JSON'],
@@ -160,6 +160,53 @@ const MORE_PROJECTS = [
       '/projects/native-mobile-resources/app-photo-3.webp',
       '/projects/native-mobile-resources/app-photo-4.webp',
     ],
+  },
+  {
+    id: 'block-hashing',
+    title: 'Block Hashing for Large Files',
+    category: 'Cryptography · Python',
+    year: '2026',
+    description: 'Funcion de hash criptografica personalizada construida desde cero en Python para procesar archivos grandes en bloques con mecanismos de encadenamiento.',
+    fullDescription: 'Funcion de hash criptografica personalizada construida desde cero en Python, disenada para procesar archivos grandes de forma determinista en bloques con mecanismos de encadenamiento, generando un valor de integridad unico de 256 bits. Implementa compresion personalizada con 32 rondas de mezcla usando operaciones XOR, rotaciones bit a bit y sumas modulares, procesamiento en bloques de 512 bits para manejar archivos grandes sin desbordamiento de memoria, padding Merkle-Damgard para prevenir extension de longitud, validacion automatica del efecto avalancha y benchmarking contra SHA-256 nativo de Python.',
+    logo: null,
+    accent: '#9ca3af',
+    tags: ['Python', 'Cryptography', 'Hashing', 'SHA-256'],
+    collaborators: [
+      { name: 'Diego Fernando Aguirre Tenjo', github: 'https://github.com/elcokiin' },
+      { name: 'Katlyn Jennelis Galvis Rodriguez', github: 'https://github.com/Katlyng' },
+    ],
+    github: 'https://github.com/CamiloAT/aguirre-arias-galvis-hash',
+    demo: '',
+    images: [],
+    cliOutput: `# Bloque 1: Generación de archivos de prueba
+generar_archivo("archivo_1mb.txt",    1_048_576 bytes)
+generar_archivo("archivo_5mb.bin",    5_242_880 bytes)
+generar_archivo("archivo_10mb.txt",  10_557_419 bytes)
+modificar_bit("archivo_1mb_mod.txt",  byte_0: 0x41 → 0x40)
+
+# Bloque 2: Cálculo de hashes (512-bit blocks, 32 rounds)
+archivo               bloques   tiempo(ms)   hash
+archivo_1mb.txt        16385     2094.45    7c8f436d...6b4878e
+archivo_5mb.bin        81921    10246.34    87b3168a...178853
+archivo_10mb.txt      164960    21007.70    dcc8780a...d4ef5f
+archivo_1mb_mod.txt    16385     2054.19    984eb823...3228514
+
+# Bloque 3: Validación del efecto avalancha
+original  → 7c8f436dc6bb6d7e34cb9b90e3cd038118813016d0dd9e604ee0649de6b4878e
+modificado → 984eb823e8ea97daff018d87b9e4bc2ff04ce7b9f8ed817a83364ca913228514
+bits_diferentes: 132 / 256 = 51.56%  ✓ ≈50%
+
+# Bloque 4: Benchmark vs SHA-256
+archivo              custom(ms)   sha256(ms)   ratio
+archivo_1mb.txt        2094.45       1.79    1172x más lento
+archivo_5mb.bin       10246.34       4.36    2353x más lento
+archivo_10mb.txt      21007.70       9.90    2121x más lento
+
+# Bloque 5: Resumen técnico
+hash_bits: 256  |  block_bits: 512  |  rondas: 32
+padding: Merkle-Damgård  |  construccion: Davies-Meyer
+seguridad_teorica: ~2^128 colisiones
+implementacion: Python puro (sin dependencias externas)`,
   },
   {
     id: 'sentinel',
@@ -411,6 +458,20 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
+                )}
+
+                {selectedProject.cliOutput && (
+                  <>
+                    <span className="projects-page__modal-cli-label">Funcionamiento</span>
+                    <div className="projects-page__modal-cli">
+                      <div className="projects-page__modal-cli-header">
+                      <span className="projects-page__modal-cli-dot projects-page__modal-cli-dot--red" />
+                      <span className="projects-page__modal-cli-dot projects-page__modal-cli-dot--yellow" />
+                      <span className="projects-page__modal-cli-dot projects-page__modal-cli-dot--green" />
+                    </div>
+                    <pre className="projects-page__modal-cli-body">{selectedProject.cliOutput}</pre>
+                    </div>
+                  </>
                 )}
 
                 {selectedProject.collaborators && selectedProject.collaborators.length > 0 && (
