@@ -1,7 +1,7 @@
 .craft {
   position: relative;
   min-height: 100vh;
-  padding: var(--space-3xl) var(--gutter);
+  padding: var(--space-2xl) var(--gutter);
   overflow: hidden;
 }
 
@@ -56,58 +56,67 @@
   margin: var(--space-lg) 0;
 }
 
-.craft__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg) var(--space-xl);
-  margin-bottom: var(--space-2xl);
-}
-
-.craft__skill {
-  padding-bottom: var(--space-md);
-}
-
-.craft__skill-header {
+.craft__categories {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: var(--space-sm);
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-left: 2rem;
 }
 
-.craft__skill-name {
+.craft__category-name {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  color: var(--accent-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.craft__techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.craft__tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: default;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.craft__tech:hover {
+  border-color: var(--tech-color);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--tech-color) 25%, transparent);
+}
+
+.craft__tech:hover .craft__tech-icon {
+  color: var(--tech-color);
+}
+
+.craft__tech-icon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.craft__tech-name {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
   font-weight: 400;
   color: var(--text-primary);
-  letter-spacing: -0.01em;
-}
-
-.craft__skill-category {
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.craft__skill-bar {
-  width: 100%;
-  height: 2px;
-  background: var(--bg-elevated);
-  overflow: hidden;
-}
-
-.craft__skill-fill {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  transform-origin: left;
+  letter-spacing: 0.01em;
 }
 
 .craft__philosophy {
   max-width: 700px;
-  margin: 0 auto;
+  margin: var(--space-2xl) auto 0;
   text-align: center;
 }
 
@@ -151,8 +160,12 @@
     padding: var(--space-xl) var(--gutter);
   }
 
-  .craft__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
+  .craft__techs {
+    gap: 0.5rem;
+  }
+
+  .craft__tech {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
   }
 }
