@@ -50,7 +50,7 @@ const MORE_PROJECTS = [
     category: 'Simulacion · React · Vite',
     year: '2026',
     description: 'Aplicacion web interactiva para generacion, visualizacion y evaluacion estadistica de numeros pseudoaleatorios.',
-    fullDescription: 'Aplicacion web moderna e interactiva disenada para la generacion, visualizacion y evaluacion estadistica de numeros pseudoaleatorios. Permite experimentar con diferentes algoritmos de generacion matematicos y someter los resultados a pruebas rigurosas de uniformidad e independencia. Incluye generador congruencial lineal, generador congruencial multiplicativo y metodo del cuadrado medio, junto con pruebas estadisticas interactivas de Chi-Cuadrado, Kolmogorov-Smirnov y Poker con tooltips educativos y tablas de frecuencia dinamicas. Cuenta con un carrusel de graficas animadas con cinco tipos de visualizacion, comparacion lado a lado de algoritmos con los mismos parametros, interfaz dark mode con animaciones fluidas y un recorrido guiado interactivo.',
+    fullDescription: 'Aplicacion web moderna e interactiva diseñada para la generacion, visualizacion y evaluacion estadistica de numeros pseudoaleatorios. Permite experimentar con diferentes algoritmos de generacion matematicos y someter los resultados a pruebas rigurosas de uniformidad e independencia. Incluye generador congruencial lineal, generador congruencial multiplicativo y metodo del cuadrado medio, junto con pruebas estadisticas interactivas de Chi-Cuadrado, Kolmogorov-Smirnov y Poker con tooltips educativos y tablas de frecuencia dinamicas. Cuenta con un carrusel de graficas animadas con cinco tipos de visualizacion, comparacion lado a lado de algoritmos con los mismos parametros, interfaz dark mode con animaciones fluidas y un recorrido guiado interactivo.',
     logo: '/projects/pseudorandom-number-generator/pseudorandom-number-generator-logo.png',
     accent: 'linear-gradient(45deg, #7c3aed, #06b6d4)',
     tags: ['React', 'Vite', 'Tailwind', 'Recharts', 'Framer Motion', 'jStat'],
@@ -167,9 +167,9 @@ const MORE_PROJECTS = [
     category: 'Cryptography · Python',
     year: '2026',
     description: 'Funcion de hash criptografica personalizada construida desde cero en Python para procesar archivos grandes en bloques con mecanismos de encadenamiento.',
-    fullDescription: 'Funcion de hash criptografica personalizada construida desde cero en Python, disenada para procesar archivos grandes de forma determinista en bloques con mecanismos de encadenamiento, generando un valor de integridad unico de 256 bits. Implementa compresion personalizada con 32 rondas de mezcla usando operaciones XOR, rotaciones bit a bit y sumas modulares, procesamiento en bloques de 512 bits para manejar archivos grandes sin desbordamiento de memoria, padding Merkle-Damgard para prevenir extension de longitud, validacion automatica del efecto avalancha y benchmarking contra SHA-256 nativo de Python.',
+    fullDescription: 'Funcion de hash criptografica personalizada construida desde cero en Python, diseñada para procesar archivos grandes de forma determinista en bloques con mecanismos de encadenamiento, generando un valor de integridad unico de 256 bits. Implementa compresion personalizada con 32 rondas de mezcla usando operaciones XOR, rotaciones bit a bit y sumas modulares, procesamiento en bloques de 512 bits para manejar archivos grandes sin desbordamiento de memoria, padding Merkle-Damgard para prevenir extension de longitud, validacion automatica del efecto avalancha y benchmarking contra SHA-256 nativo de Python.',
     logo: null,
-    accent: '#9ca3af',
+    accent: '#6b7280',
     tags: ['Python', 'Cryptography', 'Hashing', 'SHA-256'],
     collaborators: [
       { name: 'Diego Fernando Aguirre Tenjo', github: 'https://github.com/elcokiin' },
@@ -207,6 +207,74 @@ hash_bits: 256  |  block_bits: 512  |  rondas: 32
 padding: Merkle-Damgård  |  construccion: Davies-Meyer
 seguridad_teorica: ~2^128 colisiones
 implementacion: Python puro (sin dependencias externas)`,
+  },
+  {
+    id: 'block-cipher',
+    title: 'Custom Block Cipher for Logistics',
+    category: 'Cryptography · Python · Tkinter',
+    year: '2026',
+    description: 'Sistema de cifrado grafico que implementa un algoritmo SPN personalizado para proteger codigos de rastreo en logistica.',
+    fullDescription: 'Sistema de cifrado grafico que implementa un algoritmo de bloque personalizado basado en una Red de Sustitucion-Permutacion (SPN), diseñado especificamente para asegurar codigos de rastreo de paquetes en sistemas logisticos heredados. Utiliza manipulaciones de cadenas y operaciones a nivel de bits sobre un alfabeto de 36 caracteres (A-Z, 0-9) con bloques fijos de 20 caracteres. Implementa los principios de Shannon (confusion y difusion) con 32 rondas de sustitucion encadenada y permutacion biyectiva, validacion de efecto avalancha y analisis de resistencia a criptoanalisis diferencial y lineal. Incluye GUI con tkinter para cifrar, generar reportes completos de rondas y analizar difusion.',
+    logo: null,
+    accent: '#e5e7eb',
+    tags: ['Python', 'Tkinter', 'SPN', 'Cryptography'],
+    collaborators: [
+      { name: 'Diego Fernando Aguirre Tenjo', github: 'https://github.com/elcokiin' },
+      { name: 'Katlyn Jennelis Galvis Rodriguez', github: 'https://github.com/Katlyng' },
+    ],
+    github: 'https://github.com/CamiloAT/block-cipher',
+    demo: '',
+    images: [],
+    cliOutput: `# CIFRADOR DE BLOQUE — LOGISTICA v1.0
+# Red de Sustitucion-Permutacion (SPN)
+
+Mensaje original (M) : PKG2024ABCDEF1234
+Bloque preparado (M) : PKG2024ABCDEF1234XXX  <- padding a 20 chars
+
+Clave maestra (K0)  : 0x0F0E  (decimal: 3854)
+Rondas         (R)  : 32
+Bloque         (B)  : 20 caracteres
+Modulo         (N)  : 36  (= len(ALPHABET))
+Permutacion pi(i)   : (7i+3) mod 20  [biyectiva: mcd(7,20)=1]
+
+-- Ronda  1 ────────────────────────────────────────
+   Entrada a la ronda    : PKG2024ABCDEF1234XXX
+   Tras S encadenada(S)  : IUGUZTW1XNPWCP4N8TDO
+   Tras transposicion(pi): W4TIUWNCNDUZ1PP8OGTX
+
+-- Ronda  8 ────────────────────────────────────────
+   Entrada a la ronda    : GVJBHALKKRLE0PIJW011
+   Tras S encadenada(S)  : W4ZXRJP3I3JTE4QIYTXT
+   Tras transposicion(pi): TQTWXP3EIX4R3J4YTZJI
+
+-- Ronda 32 (FINAL) ────────────────────────────────
+   Entrada a la ronda    : OKABYOZYIA8P6YMKX61S
+   Tras S encadenada(S)  : E1GZQGNXNM5Y9Y8Y15WU
+   Tras transposicion(pi): Y85EZNM9YW1QX5Y1UGGN
+
+Texto cifrado (C) : Y85EZNM9YW1QX5Y1UGGN
+
+# ANALISIS DE DIFUSION (EFECTO AVALANCHA)
+Mensaje original  : PKG2024ABCDEF1234XXX
+Mensaje modificado: PKG2024ABCDEF1234XXY  <- ultimo char +1
+
+Ciphertext 1 : Y85EZNM9YW1QX5Y1UGGN
+Ciphertext 2 : 5AN11SGAAGKEDTBGZXO5
+
+Dif. bits  :  49 / 120 (40.8%)  ideal ~50%
+Dif. chars :  20 / 20  (100.0%)  ideal ~80-100%
+Evaluacion : BUENO
+
+# ANALISIS POR NUMERO DE RONDAS
+   K0 = 0x0F0E fija | 1 char modificado
+
+ Rondas | Chars |  % Chars |   % Bits | Nivel
+----------------------------------------------------
+      1 |     1 |     5.0% |     0.8% | Nula
+      4 |    19 |    95.0% |    37.5% | Alta
+      8 |    18 |    90.0% |    35.0% | Alta
+     16 |    18 |    90.0% |    37.5% | Alta
+     32 |    20 |   100.0% |    40.8% | Alta`,
   },
   {
     id: 'sentinel',
