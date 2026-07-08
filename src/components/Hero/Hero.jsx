@@ -12,7 +12,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="hero" ref={sectionRef}>
+    <section id="hero" className="hero" ref={sectionRef}>
       <div className="hero__bg">
         <div className="hero__gradient" />
         <div className="hero__vignette" />

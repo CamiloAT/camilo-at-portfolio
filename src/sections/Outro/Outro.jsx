@@ -14,7 +14,7 @@ const Outro = () => {
             className="outro__name"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: true, margin: '0px 0px -50px 0px' }}
             transition={{ duration: 0.8 }}
           >
             Camilo Andrés Arias Tenjo
@@ -24,8 +24,8 @@ const Outro = () => {
             className="outro__pseudonym"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true, margin: '0px 0px 50px 0px' }}
+            transition={{ duration: 0.8 }}
           >
             Camilo AT
           </motion.p>

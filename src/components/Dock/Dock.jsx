@@ -3,17 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 import './Dock.css'
 
 const NAV_ITEMS = [
-  { id: 'story', label: 'I', title: 'The Story' },
-  { id: 'work', label: 'II', title: 'The Work' },
-  { id: 'craft', label: 'III', title: 'The Craft' },
+  { id: 'hero', label: 'I', title: 'Intro', offset: 80 },
+  { id: 'story', label: 'II', title: 'About Me', offset: -100 },
+  { id: 'work', label: 'III', title: 'My Projects', offset: 10 },
+  { id: 'craft', label: 'IV', title: 'Tech Stack', offset: -30 },
 ]
 
 const Dock = () => {
   const [hovered, setHovered] = useState(null)
 
-  const scrollTo = (id) => {
+  const scrollTo = (id, offset) => {
     const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top: y, behavior: 'smooth' })
+    }
   }
 
   return (
@@ -25,7 +29,7 @@ const Dock = () => {
             className="dock__item"
             onMouseEnter={() => setHovered(item.id)}
             onMouseLeave={() => setHovered(null)}
-            onClick={() => scrollTo(item.id)}
+            onClick={() => scrollTo(item.id, item.offset)}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 2.5 + index * 0.1 }}
