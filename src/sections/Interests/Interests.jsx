@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { FaMusic, FaCode, FaHeadphones, FaPlay, FaPause, FaGuitar, FaWalking, FaBroadcastTower, FaStepBackward, FaStepForward } from 'react-icons/fa'
+import { FaMusic, FaCode, FaHeadphones, FaPlay, FaPause, FaGuitar, FaWalking, FaBroadcastTower, FaStepBackward, FaStepForward, FaTimes, FaBars } from 'react-icons/fa'
 import './Interests.css'
 
 const INTERESTS = [
@@ -14,14 +14,23 @@ const PLAYLIST = [
   { title: 'Doma', artist: 'Josean Log', youtubeId: 'e8qJWFrZFCI' },
   { title: 'La Graciosa', artist: 'Quevedo', youtubeId: 'LZPLBSRnxSY' },
   { title: 'Own My Mind', artist: 'Maneskin', youtubeId: 'ABbggjVQm6A' },
-  { title: 'El Hexxo', artist: 'Feid', youtubeId: 'Ro1sDfvXZPg' },
+  { title: 'El Hexxo', artist: 'Feid', youtubeId: 'Qn1rDfuWYOg' },
   { title: 'Te Falle', artist: 'Christian Nodal', youtubeId: 'oZmXYET4qQU' },
   { title: 'Understand', artist: 'Boy With Uke', youtubeId: 'T2fjQrsKbAM' },
   { title: 'Stolen Dance', artist: 'Milky Chance', youtubeId: 'iX-QaNzd-0Y' },
-  { title: 'Guaya', artist: 'Lucho RK & Quevedo', youtubeId: 'dQw4w9WgXcQ' },
-  { title: '1000 Canciones', artist: 'Alvaro Diaz', youtubeId: 'dQw4w9WgXcQ' },
-  { title: 'Tus Vueltas', artist: 'Milo J', youtubeId: 'dQw4w9WgXcQ' },
+  { title: 'Guaya', artist: 'Lucho RK & Quevedo', youtubeId: 'fwRkmQul8G4' },
+  { title: '1000 Canciones', artist: 'Alvaro Diaz', youtubeId: 'WG8q1wrvQHE' },
+  { title: 'Tus Vueltas', artist: 'Milo J', youtubeId: 'SOXYr6CsUJU' },
 ]
+
+const Equalizer = () => (
+  <div className="equalizer">
+    <span className="equalizer__bar" />
+    <span className="equalizer__bar" />
+    <span className="equalizer__bar" />
+    <span className="equalizer__bar" />
+  </div>
+)
 
 const Interests = () => {
   const sectionRef = useRef(null)
@@ -29,7 +38,9 @@ const Interests = () => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTrack, setCurrentTrack] = useState(0)
   const [playerReady, setPlayerReady] = useState(false)
-  const [isPlayerOpen, setIsPlayerOpen] = useState(false)
+  const [isPlayerActive, setIsPlayerActive] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isPlaylistOpen, setIsPlaylistOpen] = useState(false)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
@@ -72,6 +83,32 @@ const Interests = () => {
     }
   }, [])
 
+  const playTrack = useCallback((index) => {
+    if (!playerRef.current) return
+    setCurrentTrack(index)
+    playerRef.current.loadVideoById(PLAYLIST[index].youtubeId)
+    setIsPlaying(true)
+    setIsPlayerActive(true)
+  }, [])
+
+  const toggleTrack = useCallback((index) => {
+    setIsPlayerActive(true)
+    if (!playerRef.current) return
+    if (index === currentTrack) {
+      if (isPlaying) {
+        playerRef.current.pauseVideo()
+        setIsPlaying(false)
+      } else {
+        playerRef.current.playVideo()
+        setIsPlaying(true)
+      }
+    } else {
+      setCurrentTrack(index)
+      playerRef.current.loadVideoById(PLAYLIST[index].youtubeId)
+      setIsPlaying(true)
+    }
+  }, [currentTrack, isPlaying])
+
   const playNext = useCallback(() => {
     if (!playerRef.current) return
     const next = (currentTrack + 1) % PLAYLIST.length
@@ -97,6 +134,24 @@ const Interests = () => {
     }
     setIsPlaying(!isPlaying)
   }, [isPlaying])
+
+  const handleOpenPlayer = () => {
+    setIsPlayerActive(true)
+    setIsMenuOpen(true)
+    if (playerRef.current && playerReady) {
+      playerRef.current.playVideo()
+      setIsPlaying(true)
+    }
+  }
+
+  const handleCloseCompletely = () => {
+    if (playerRef.current) {
+      playerRef.current.pauseVideo()
+    }
+    setIsPlaying(false)
+    setIsPlayerActive(false)
+    setIsMenuOpen(false)
+  }
 
   const track = PLAYLIST[currentTrack]
 
@@ -164,13 +219,22 @@ const Interests = () => {
             <p className="interests__music-text">
               Si quieres ir escuchando mientras navegas...
             </p>
-            <button
-              className="interests__music-btn"
-              onClick={() => setIsPlayerOpen(!isPlayerOpen)}
-            >
-              <FaBroadcastTower size={14} />
-              <span>{isPlayerOpen ? 'Cerrar reproductor' : 'Ir escuchando'}</span>
-            </button>
+            <div className="interests__music-btns">
+              <button
+                className="interests__music-btn"
+                onClick={handleOpenPlayer}
+              >
+                <FaBroadcastTower size={14} />
+                <span>Ir escuchando</span>
+              </button>
+              <button
+                className="interests__music-btn interests__music-btn--secondary"
+                onClick={() => setIsPlaylistOpen(true)}
+              >
+                <FaBars size={14} />
+                <span>Ver playlist</span>
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -178,7 +242,7 @@ const Interests = () => {
       <div id="yt-player-hidden" className="interests__player-hidden" />
 
       <AnimatePresence>
-        {isPlayerOpen && (
+        {isPlayerActive && (
           <motion.div
             className="floating-player"
             initial={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -189,42 +253,117 @@ const Interests = () => {
             <div className="floating-player__compact">
               <button
                 className="floating-player__radio-btn"
-                onClick={() => setIsPlayerOpen(!isPlayerOpen)}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <FaBroadcastTower size={18} className={isPlaying ? 'floating-player__radio-icon--spin' : ''} />
               </button>
+              <button
+                className="floating-player__close-btn"
+                onClick={handleCloseCompletely}
+              >
+                <FaTimes size={10} />
+              </button>
             </div>
 
-            <div className="floating-player__expanded">
-              <div className="floating-player__header">
-                <FaBroadcastTower size={12} className="floating-player__header-icon" />
-                <span className="floating-player__header-label">Sonando</span>
+            <AnimatePresence>
+              {isMenuOpen && (
+                <motion.div
+                  className="floating-player__expanded"
+                  initial={{ opacity: 0, x: -10, scale: 0.95 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -10, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="floating-player__header">
+                    <FaBroadcastTower size={12} className="floating-player__header-icon" />
+                    <span className="floating-player__header-label">Sonando</span>
+                    <button
+                      className="floating-player__playlist-btn"
+                      onClick={() => setIsPlaylistOpen(true)}
+                    >
+                      <FaBars size={12} />
+                    </button>
+                  </div>
+
+                  <div className="floating-player__body">
+                    <img
+                      src={`https://img.youtube.com/vi/${track.youtubeId}/mqdefault.jpg`}
+                      alt={track.title}
+                      className="floating-player__thumb"
+                    />
+                    <div className="floating-player__info">
+                      <span className="floating-player__title">{track.title}</span>
+                      <span className="floating-player__artist">{track.artist}</span>
+                    </div>
+                  </div>
+
+                  <div className="floating-player__controls">
+                    <button className="floating-player__ctrl" onClick={playPrev}>
+                      <FaStepBackward size={12} />
+                    </button>
+                    <button className="floating-player__ctrl floating-player__ctrl--play" onClick={togglePlay} disabled={!playerReady}>
+                      {isPlaying ? <FaPause size={12} /> : <FaPlay size={12} />}
+                    </button>
+                    <button className="floating-player__ctrl" onClick={playNext}>
+                      <FaStepForward size={12} />
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isPlaylistOpen && (
+          <motion.div
+            className="playlist-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsPlaylistOpen(false)}
+          >
+            <motion.div
+              className="playlist-modal__content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="playlist-modal__header">
+                <FaBroadcastTower size={14} className="playlist-modal__icon" />
+                <span className="playlist-modal__title">Playlist</span>
+                <button className="playlist-modal__close" onClick={() => setIsPlaylistOpen(false)}>
+                  <FaTimes size={14} />
+                </button>
               </div>
 
-              <div className="floating-player__body">
-                <img
-                  src={`https://img.youtube.com/vi/${track.youtubeId}/mqdefault.jpg`}
-                  alt={track.title}
-                  className="floating-player__thumb"
-                />
-                <div className="floating-player__info">
-                  <span className="floating-player__title">{track.title}</span>
-                  <span className="floating-player__artist">{track.artist}</span>
-                </div>
+              <div className="playlist-modal__list">
+                {PLAYLIST.map((item, index) => (
+                  <div
+                    key={item.title}
+                    className={`playlist-modal__item ${index === currentTrack ? 'playlist-modal__item--active' : ''}`}
+                    onClick={() => toggleTrack(index)}
+                  >
+                    <div className="playlist-modal__item-left">
+                      {index === currentTrack && isPlaying ? (
+                        <Equalizer />
+                      ) : (
+                        <span className="playlist-modal__item-num">{String(index + 1).padStart(2, '0')}</span>
+                      )}
+                      <div className="playlist-modal__item-info">
+                        <span className="playlist-modal__item-title">{item.title}</span>
+                        <span className="playlist-modal__item-artist">{item.artist}</span>
+                      </div>
+                    </div>
+                    <button className="playlist-modal__item-play" onClick={(e) => { e.stopPropagation(); toggleTrack(index); }}>
+                      {index === currentTrack && isPlaying ? <FaPause size={10} /> : <FaPlay size={10} />}
+                    </button>
+                  </div>
+                ))}
               </div>
-
-              <div className="floating-player__controls">
-                <button className="floating-player__ctrl" onClick={playPrev}>
-                  <FaStepBackward size={12} />
-                </button>
-                <button className="floating-player__ctrl floating-player__ctrl--play" onClick={togglePlay} disabled={!playerReady}>
-                  {isPlaying ? <FaPause size={12} /> : <FaPlay size={12} />}
-                </button>
-                <button className="floating-player__ctrl" onClick={playNext}>
-                  <FaStepForward size={12} />
-                </button>
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
