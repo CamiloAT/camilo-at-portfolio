@@ -3,6 +3,47 @@
   padding: var(--space-2xl) var(--gutter) var(--space-lg);
 }
 
+.outro__quote {
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
+
+.outro__quote-box {
+  padding: var(--space-xl);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.outro__quote-box::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--accent-primary);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.outro__quote-text {
+  font-family: 'Andres', var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.outro__quote-attr {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
 .outro__footer-line {
   width: 100%;
   height: 1px;

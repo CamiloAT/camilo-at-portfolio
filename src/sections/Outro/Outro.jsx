@@ -6,6 +6,21 @@ import './Outro.css'
 const Outro = () => {
   return (
     <footer className="outro">
+      <motion.div
+        className="outro__quote"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.8 }}
+      >
+        <blockquote className="outro__quote-box">
+          <p className="outro__quote-text">
+            "Al final todo estará bien, y si no está bien, es porque aún no es el final."
+          </p>
+          <footer className="outro__quote-attr">Mi filosofía de vida</footer>
+        </blockquote>
+      </motion.div>
+
       <div className="outro__footer-line" />
 
       <div className="outro__footer">

@@ -136,21 +136,6 @@ const Craft = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="craft__philosophy"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <blockquote className="craft__quote">
-            <p className="craft__quote-text">
-              "Al final todo estará bien, y si no está bien, es porque aún no es el final"
-            </p>
-            <footer className="craft__quote-attr">Mi filosofía de vida</footer>
-          </blockquote>
-        </motion.div>
       </div>
     </section>
   )
