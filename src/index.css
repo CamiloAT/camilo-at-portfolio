@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Andres';
+  src: url('/fonts/Andres.ttf') format('truetype');
+  font-display: swap;
+}
+
 :root {
   /* Color Palette - Cinematic Warm Dark */
   --bg-deep: #0a0a0a;

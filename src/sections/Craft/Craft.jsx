@@ -146,9 +146,9 @@ const Craft = () => {
         >
           <blockquote className="craft__quote">
             <p className="craft__quote-text">
-              "El buen diseño es invisible. El great design es inevitable."
+              "Al final todo estará bien, y si no está bien, es porque aún no es el final"
             </p>
-            <footer className="craft__quote-attr">Mi filosofía de desarrollo</footer>
+            <footer className="craft__quote-attr">Mi filosofía de vida</footer>
           </blockquote>
         </motion.div>
       </div>
