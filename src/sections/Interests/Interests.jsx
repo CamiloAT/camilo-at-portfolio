@@ -167,7 +167,7 @@ const Interests = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="interests__eyebrow-line" />
-            <span className="interests__eyebrow-text">ACT VI</span>
+            <span className="interests__eyebrow-text">ACT V</span>
             <span className="interests__eyebrow-line" />
           </motion.div>
           <motion.h2

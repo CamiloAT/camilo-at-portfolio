@@ -25,8 +25,8 @@ function HomePage() {
         <Story />
         <Work />
         <Craft />
-        <Certifications />
         <Interests />
+        <Certifications />
         <Outro />
       </main>
     </>

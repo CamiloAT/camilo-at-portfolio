@@ -7,8 +7,8 @@ const NAV_ITEMS = [
   { id: 'story', label: 'II', title: 'About Me', offset: -100 },
   { id: 'work', label: 'III', title: 'My Projects', offset: 10 },
   { id: 'craft', label: 'IV', title: 'Tech Stack', offset: -30 },
-  { id: 'certifications', label: 'V', title: 'Certifications', offset: 80 },
-  { id: 'interests', label: 'VI', title: 'Interests', offset: 80 },
+  { id: 'interests', label: 'V', title: 'Interests', offset: -35 },
+  { id: 'certifications', label: 'VI', title: 'Certifications', offset: -45 },
 ]
 
 const Dock = () => {

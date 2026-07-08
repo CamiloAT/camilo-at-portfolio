@@ -1,11 +1,11 @@
 .outro {
   position: relative;
-  padding: var(--space-2xl) var(--gutter) var(--space-lg);
+  padding: var(--space-lg) var(--gutter) var(--space-lg);
 }
 
 .outro__quote {
   max-width: 700px;
-  margin: 0 auto var(--space-xl);
+  margin: 0 auto var(--space-3xl);
   text-align: center;
 }
 

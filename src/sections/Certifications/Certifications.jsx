@@ -55,7 +55,7 @@ const Certifications = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="certs__eyebrow-line" />
-            <span className="certs__eyebrow-text">ACT V</span>
+            <span className="certs__eyebrow-text">ACT VI</span>
             <span className="certs__eyebrow-line" />
           </motion.div>
           <motion.h2
