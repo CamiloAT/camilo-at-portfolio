@@ -291,6 +291,10 @@
   transition: width 0.6s var(--ease-out-expo);
 }
 
+.work__project-line--gradient {
+  background: var(--project-gradient) !important;
+}
+
 .work__project:hover .work__project-line {
   width: 100%;
 }

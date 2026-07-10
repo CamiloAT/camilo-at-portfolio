@@ -45,6 +45,7 @@ const PROJECTS = [
     fullDescription: 'Kiru es una aplicación web que procesa una imagen de tu escritura a mano, segmenta automáticamente cada carácter, lo vectoriza y genera un archivo .ttf listo para instalar y usar en cualquier aplicación del sistema operativo. El flujo incluye generador de plantillas con diferentes conjuntos de caracteres, carga de imágenes fotografiadas, editor interactivo de glifos con herramientas de dibujar, borrar, mover y escalar, un motor de vectorización que convierte bitmaps en contornos suavizados, y un sandbox en tiempo real para previsualizar la fuente generada con textos de ejemplo, tamaños ajustables y descarga directa del archivo.\n\nUn proyecto personal que surgió de una idea repentina y que terminó convirtiéndose en uno de los proyectos que más cariño le tengo. Nació de la curiosidad por combinar procesamiento de imágenes con tipografía digital, y fue evolucionando hasta convertirse en una aplicación completa con arquitectura desacoplada: un backend en FastAPI con OpenCV y fontTools para el procesamiento de imágenes y generación de fuentes, y un frontend en React con Vite, Zustand para el estado global y Framer Motion para animaciones.',
     logo: '/projects/kiru/kiru-logo.png',
     accent: '#a855f7',
+    gradient: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)',
     tags: ['FastAPI', 'React', 'OpenCV', 'fontTools', 'Zustand'],
     collaborators: [],
     github: 'https://github.com/CamiloAT/kiru',
@@ -216,7 +217,7 @@ const Work = () => {
               transition={{ duration: 0.7, delay: index * 0.15 }}
               onMouseEnter={() => setActiveProject(project.id)}
               onMouseLeave={() => setActiveProject(null)}
-              style={{ '--project-accent': project.accent }}
+              style={{ '--project-accent': project.accent, '--project-gradient': project.gradient || '' }}
             >
               <div className="work__project-left">
                 <div className="work__project-index">
@@ -318,7 +319,7 @@ const Work = () => {
                 </div>
               </div>
 
-              <div className="work__project-line" />
+              <div className={`work__project-line${project.gradient ? ' work__project-line--gradient' : ''}`} />
 
               <AnimatePresence>
                 {activeProject === project.id && (
