@@ -17,7 +17,7 @@ const PLAYLIST = [
   { title: 'Own My Mind', artist: 'Maneskin', youtubeId: 'ABbggjVQm6A' },
   { title: 'El Hexxo', artist: 'Feid', youtubeId: 'Qn1rDfuWYOg' },
   { title: 'Te Falle', artist: 'Christian Nodal', youtubeId: 'oZmXYET4qQU' },
-  { title: 'Understand', artist: 'Boy With Uke', youtubeId: 'T2fjQrsKbAM' },
+  { title: 'Understand', artist: 'BoyWithUke', youtubeId: 'T2fjQrsKbAM' },
   { title: 'Stolen Dance', artist: 'Milky Chance', youtubeId: 'iX-QaNzd-0Y' },
   { title: 'Guaya', artist: 'Lucho RK & Quevedo', youtubeId: 'fwRkmQul8G4' },
   { title: '1000 Canciones', artist: 'Alvaro Diaz', youtubeId: 'WG8q1wrvQHE' },
