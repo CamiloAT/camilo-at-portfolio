@@ -129,16 +129,33 @@
     padding: var(--space-xl) var(--gutter) var(--space-md);
   }
 
+  .outro__quote-box {
+    padding: var(--space-lg);
+  }
+
+  .outro__quote-text {
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+  }
+
   .outro__footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .outro__footer-left {
+    align-items: center;
   }
 
   .outro__footer-right {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-sm);
+  }
+
+  .easter-egg__card {
+    padding: var(--space-lg) var(--space-md);
   }
 }
 

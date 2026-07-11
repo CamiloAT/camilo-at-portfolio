@@ -171,13 +171,42 @@
     padding: var(--space-xl) var(--gutter);
   }
 
+  .certs__grid {
+    margin-left: 0;
+  }
+
   .certs__card {
-    padding: var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
     gap: var(--space-md);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .certs__card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .certs__card-body {
+    width: 100%;
   }
 
   .certs__card-top {
     flex-direction: column;
     gap: 0.2rem;
+  }
+
+  .certs__card-name {
+    font-size: 1.1rem;
+  }
+
+  .certs__card-skills {
+    margin-top: var(--space-sm);
+  }
+
+  .certs__card-link {
+    width: 100%;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border);
   }
 }
