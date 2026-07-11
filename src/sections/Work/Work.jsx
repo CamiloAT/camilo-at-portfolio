@@ -343,7 +343,7 @@ const Work = () => {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <Link to="/projects" className="work__all-projects-btn">
+          <Link to="/projects" className="work__all-projects-btn" onClick={() => sessionStorage.setItem('scrollPosition', window.scrollY)}>
             Otros proyectos
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14" />

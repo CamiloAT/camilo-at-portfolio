@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Preloader from './components/Preloader/Preloader'
 import Hero from './components/Hero/Hero'
@@ -33,6 +33,22 @@ function HomePage() {
   )
 }
 
+function ScrollRestorer() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      const saved = sessionStorage.getItem('scrollPosition')
+      if (saved !== null) {
+        sessionStorage.removeItem('scrollPosition')
+        requestAnimationFrame(() => window.scrollTo(0, parseInt(saved, 10)))
+      }
+    }
+  }, [location.pathname])
+
+  return null
+}
+
 function App() {
   const [loading, setLoading] = useState(true)
   const [stripsVisible, setStripsVisible] = useState(false)
@@ -63,10 +79,13 @@ function App() {
         </AnimatePresence>
 
         {!loading && (
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
+          <>
+            <ScrollRestorer />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
+          </>
         )}
       </div>
     </BrowserRouter>
