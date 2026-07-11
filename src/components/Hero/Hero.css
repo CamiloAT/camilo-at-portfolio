@@ -204,8 +204,12 @@
     display: none;
   }
 
+  .hero__tagline {
+    margin-bottom: 6rem;
+  }
+
   .hero__scroll-hint {
-    bottom: 2rem;
+    bottom: 1.5rem;
   }
 }
 
