@@ -50,12 +50,12 @@ const Interests = () => {
   const y = useTransform(scrollYProgress, [0, 1], [40, -40])
 
   useEffect(() => {
-    const tag = document.createElement('script')
-    tag.src = 'https://www.youtube.com/iframe_api'
-    document.head.appendChild(tag)
+    let scriptTag = null
+    let player = null
 
-    window.onYouTubeIframeAPIReady = () => {
-      playerRef.current = new window.YT.Player('yt-player-hidden', {
+    const createPlayer = () => {
+      if (!document.getElementById('yt-player-hidden')) return
+      player = new window.YT.Player('yt-player-hidden', {
         height: '1',
         width: '1',
         videoId: PLAYLIST[0].youtubeId,
@@ -69,7 +69,10 @@ const Interests = () => {
           rel: 0,
         },
         events: {
-          onReady: () => setPlayerReady(true),
+          onReady: () => {
+            playerRef.current = player
+            setPlayerReady(true)
+          },
           onStateChange: (event) => {
             if (event.data === window.YT.PlayerState.ENDED) {
               playNext()
@@ -79,7 +82,29 @@ const Interests = () => {
       })
     }
 
+    if (window.YT && window.YT.Player) {
+      createPlayer()
+    } else {
+      scriptTag = document.createElement('script')
+      scriptTag.src = 'https://www.youtube.com/iframe_api'
+      document.head.appendChild(scriptTag)
+
+      window.onYouTubeIframeAPIReady = () => {
+        createPlayer()
+      }
+    }
+
     return () => {
+      if (player && typeof player.destroy === 'function') {
+        player.destroy()
+      }
+      playerRef.current = null
+      setPlayerReady(false)
+
+      if (scriptTag && scriptTag.parentNode) {
+        scriptTag.parentNode.removeChild(scriptTag)
+      }
+
       delete window.onYouTubeIframeAPIReady
     }
   }, [])
