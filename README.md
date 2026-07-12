@@ -17,7 +17,6 @@ A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo 
 - **Floating Music Player** — YouTube IFrame API integration with a 10-song playlist, play/pause/prev/next controls, equalizer animation, and a playlist modal
 - **Interactive Project Modals** — Detailed project views with image carousels, CLI terminal outputs, collaborator links, and tech stack tags
 - **Dock Navigation** — Fixed navigation with section-aware scroll offsets for both desktop and mobile viewports
-- **Easter Egg** — Hidden dedication modal triggered by 15 rapid clicks on the footer, featuring a heartbeat SVG animation
 - **Fully Responsive** — Adaptive layouts for mobile with stacked cards, top navigation bar, and optimized typography
 
 ---
@@ -54,7 +53,7 @@ A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo 
 
 > **Note:** The project uses YouTube IFrame API for the music player. An internet connection is required for the playlist functionality to work.
 
-> **Note:** Custom font `Andres` is included in `public/fonts/` and used for the philosophy quote, footer name, and easter egg.
+> **Note:** Custom font `Andres` is included in `public/fonts/` and used for the philosophy quote, and footer name.
 
 ---
 
