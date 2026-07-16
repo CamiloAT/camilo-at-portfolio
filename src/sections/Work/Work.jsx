@@ -123,6 +123,8 @@ const PROJECTS = [
       '/projects/inject-and-fill/app-photo-2.webp',
       '/projects/inject-and-fill/app-photo-3.webp',
       '/projects/inject-and-fill/app-photo-4.webp',
+      '/projects/inject-and-fill/app-photo-5.webp',
+      '/projects/inject-and-fill/app-photo-6.webp',
     ],
   },
 ]
