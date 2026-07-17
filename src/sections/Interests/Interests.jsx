@@ -36,12 +36,17 @@ const Equalizer = () => (
 const Interests = () => {
   const sectionRef = useRef(null)
   const playerRef = useRef(null)
+  const currentTrackRef = useRef(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTrack, setCurrentTrack] = useState(0)
   const [playerReady, setPlayerReady] = useState(false)
   const [isPlayerActive, setIsPlayerActive] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false)
+
+  useEffect(() => {
+    currentTrackRef.current = currentTrack
+  }, [currentTrack])
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
@@ -75,7 +80,10 @@ const Interests = () => {
           },
           onStateChange: (event) => {
             if (event.data === window.YT.PlayerState.ENDED) {
-              playNext()
+              const next = (currentTrackRef.current + 1) % PLAYLIST.length
+              setCurrentTrack(next)
+              playerRef.current.loadVideoById(PLAYLIST[next].youtubeId)
+              setIsPlaying(true)
             }
           },
         },
