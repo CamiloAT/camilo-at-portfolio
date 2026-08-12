@@ -511,7 +511,10 @@ const Work = () => {
               transition={{ duration: 0.2 }}
               style={{ left: hintPos.x, top: hintPos.y, transform: getHintTransform(hintPos.x, hintPos.vpW) }}
             >
-              Click de nuevo para más información
+              <span className="work__project-hint-text">Click de nuevo para más información</span>
+              <svg className="work__project-hint-timer" viewBox="0 0 16 16" width="14" height="14">
+                <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="37.7" />
+              </svg>
             </motion.div>
           )}
         </AnimatePresence>,
