@@ -404,7 +404,7 @@ const Projects = () => {
 
   const getHintTransform = (x, vpW) => {
     if (x + 180 > vpW) return 'translate(-100%, -50%)'
-    if (x < 80) return 'translate(0%, -50%)'
+    if (x < 180) return 'translate(0%, -50%)'
     return 'translate(-50%, -50%)'
   }
 
