@@ -184,6 +184,36 @@ const Work = () => {
   const [hintedProject, setHintedProject] = useState(null)
   const [hintPos, setHintPos] = useState({ x: 0, y: 0 })
   const hintTimerRef = useRef(null)
+
+  const hexToRgb = (hex) => {
+    let h = hex.replace('#', '')
+    if (h.length === 3) h = h.split('').map((c) => c + c).join('')
+    const n = parseInt(h, 16)
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
+  }
+
+  const modalAccent = selectedProject ? (
+    selectedProject.accent.startsWith('#')
+      ? selectedProject.accent
+      : (selectedProject.accent.match(/#[0-9a-fA-F]{3,8}/g) || []).slice(-1)[0] || 'var(--accent-primary)'
+  ) : null
+
+  const modalGradient = selectedProject ? (selectedProject.gradient || (selectedProject.accent.includes('gradient') ? selectedProject.accent : null)) : null
+  const gradientColors = modalGradient ? (modalGradient.match(/#[0-9a-fA-F]{3,8}/g) || []) : []
+  const gradFirst = gradientColors[0] || modalAccent
+  const gradSecond = gradientColors[gradientColors.length - 1] || modalAccent
+  const modalAccentLine = modalGradient || (selectedProject ? selectedProject.accent : null)
+  const modalAccentGrad = modalGradient || modalAccent
+
+  let modalDotColors = null
+  if (selectedProject && gradientColors.length >= 2) {
+    const [r1, g1, b1] = hexToRgb(gradientColors[0])
+    const [r2, g2, b2] = hexToRgb(gradientColors[gradientColors.length - 1])
+    modalDotColors = selectedProject.images.map((_, i) => {
+      const t = selectedProject.images.length > 1 ? i / (selectedProject.images.length - 1) : 0
+      return `rgb(${Math.round(r1 + (r2 - r1) * t)}, ${Math.round(g1 + (g2 - g1) * t)}, ${Math.round(b1 + (b2 - b1) * t)})`
+    })
+  }
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
@@ -439,6 +469,7 @@ const Work = () => {
           >
             <motion.div
               className="work__modal"
+              style={{ '--modal-accent': selectedProject.accent, '--modal-accent-solid': modalAccent, '--modal-accent-grad': modalAccentGrad, '--modal-accent-line': modalAccentLine, '--modal-accent-first': gradFirst, '--modal-accent-second': gradSecond }}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -493,6 +524,7 @@ const Work = () => {
                       <span
                         key={dotIndex}
                         className={`work__modal-dot ${dotIndex === currentImageIndex ? 'work__modal-dot--active' : ''}`}
+                        style={modalDotColors ? { background: modalDotColors[dotIndex] } : undefined}
                         onClick={() => setCurrentImageIndex(dotIndex)}
                       />
                     ))}
