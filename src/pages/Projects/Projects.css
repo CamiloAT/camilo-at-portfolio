@@ -356,6 +356,7 @@
 }
 
 .projects-page__modal-image {
+  position: relative;
   width: 100%;
   aspect-ratio: 16/7;
   border: 1px solid var(--border);
