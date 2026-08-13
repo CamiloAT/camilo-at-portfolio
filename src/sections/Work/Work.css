@@ -293,6 +293,7 @@
 
 .work__project-line--gradient {
   background: var(--project-gradient) !important;
+  height: 2px;
 }
 
 .work__project:hover .work__project-line {
