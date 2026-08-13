@@ -36,6 +36,19 @@ const PROJECTS = [
       '/projects/byte-dental/app-photo-2.webp',
       '/projects/byte-dental/app-photo-3.webp',
     ],
+    captions: [
+      { title: 'Dashboard', desc: 'Panel principal con estadísticas generales de la clínica.' },
+      { title: 'Gestión de Pacientes', desc: 'Registro y administración de historiales de pacientes.' },
+      { title: 'Historial SOAP', desc: 'Seguimiento de tratamientos con formato SOAP.' },
+      { title: 'Gestión de Citas', desc: 'Agenda y control de citas de la clínica.' },
+      { title: 'Roles y Usuarios', desc: 'Control de acceso por rol (Admin, Doctor, Asistente, Auditor).' },
+      { title: 'Reportes', desc: 'Generación de reportes en PDF y JSON.' },
+      { title: 'Auditoría', desc: 'Registro automatizado de auditoría con triggers de PostgreSQL.' },
+      { title: 'Autenticación', desc: 'Login con Google OAuth y recuperación por OTP.' },
+      { title: 'Notificaciones', desc: 'Avisos por email y notificaciones del sistema.' },
+      { title: 'Perfil', desc: 'Vista de perfil y configuración del usuario.' },
+      { title: 'Configuración', desc: 'Ajustes generales del sistema.' },
+    ],
   },
   {
     id: 2,
@@ -58,6 +71,13 @@ const PROJECTS = [
       '/projects/kiru/app-photo-4.webp',
       '/projects/kiru/app-photo-5.webp',
     ],
+    captions: [
+      { title: 'Generador de Plantillas', desc: 'Plantillas con diferentes conjuntos de caracteres para tu escritura.' },
+      { title: 'Carga de Imagen', desc: 'Sube fotos de tu letra manuscrita para procesarla.' },
+      { title: 'Editor de Glifos', desc: 'Dibuja, borra, mueve y escala cada carácter.' },
+      { title: 'Vectorización', desc: 'Convierte bitmaps en contornos suavizados.' },
+      { title: 'Previsualización', desc: 'Sandbox para probar la fuente con textos de ejemplo y descargarla.' },
+    ],
   },
   {
     id: 3,
@@ -79,6 +99,14 @@ const PROJECTS = [
       '/projects/deck-royale/app-photo-4.webp',
       '/projects/deck-royale/app-photo-5.webp',
       '/projects/deck-royale/app-photo-6.webp',
+    ],
+    captions: [
+      { title: 'Sala de Espera', desc: 'Configuración de blinds, buy-in y agregar amigos.' },
+      { title: 'Mesa de Juego', desc: 'Mesa con las cartas y acciones del turno actual.' },
+      { title: 'Avatares Animados', desc: 'Avatares SVG con animaciones y personalización.' },
+      { title: 'Side Pots', desc: 'Manejo de botes laterales en manos con all-in.' },
+      { title: 'Temporizador', desc: 'Cuenta regresiva de 60 segundos con semáforo de color.' },
+      { title: 'Fin de Juego', desc: 'Modal con estadísticas detalladas y celebración con confetti.' },
     ],
   },
   {
@@ -104,6 +132,14 @@ const PROJECTS = [
       '/projects/emperator-penguin-survival-sim/app-photo-5.webp',
       '/projects/emperator-penguin-survival-sim/app-photo-6.webp',
     ],
+    captions: [
+      { title: 'Simulación 2D', desc: 'Vista en Canvas con los agentes individuales del huddle.' },
+      { title: 'Simulación 3D', desc: 'Visualización tridimensional con Three.js.' },
+      { title: 'Dashboard', desc: 'Métricas en tiempo real de la simulación.' },
+      { title: 'Gráficas Históricas', desc: 'Evolución temporal con Recharts.' },
+      { title: 'Diagrama Causal', desc: 'Modelo de relaciones del sistema con React Flow.' },
+      { title: 'Documentación', desc: 'Modelo completo con ecuaciones y metodología PASSI.' },
+    ],
   },
   {
     id: 5,
@@ -126,6 +162,15 @@ const PROJECTS = [
       '/projects/page-cut/app-photo-5.webp',
       '/projects/page-cut/app-photo-6.webp',
       '/projects/page-cut/app-photo-7.webp',
+    ],
+    captions: [
+      { title: 'Side Panel', desc: 'Panel lateral con los atajos de la página actual, organizados por zonas y origen.' },
+      { title: 'Selector Visual', desc: 'Picker interactivo que captura cualquier elemento de la página con su selector CSS.' },
+      { title: 'Atajos Globales', desc: 'Accesos directos que funcionan desde cualquier página para navegar a tus URLs.' },
+      { title: 'Escáner de Elementos', desc: 'Detecta botones, enlaces e inputs con filtros por tipo de elemento.' },
+      { title: 'Detección de Duplicados', desc: 'Advierte conflictos de teclas entre atajos locales y globales en tiempo real.' },
+      { title: 'Modo Oscuro', desc: 'Tema personalizable con toggle en el encabezado del panel.' },
+      { title: 'Selectores Inteligentes', desc: 'Genera CSS selectors robustos con recuperación automática de menús colapsados.' },
     ],
   },
 ]
@@ -435,6 +480,12 @@ const Work = () => {
                     <div className="work__modal-image-placeholder" style={{ display: 'none' }}>
                       <span>Screenshot {currentImageIndex + 1}</span>
                     </div>
+                    {selectedProject.captions && selectedProject.captions[currentImageIndex] && (
+                      <div className="work__modal-img-caption">
+                        <span className="work__modal-img-caption-title">{selectedProject.captions[currentImageIndex].title}</span>
+                        <span className="work__modal-img-caption-desc">{selectedProject.captions[currentImageIndex].desc}</span>
+                      </div>
+                    )}
                   </div>
                   <button className="work__modal-arrow work__modal-arrow--right" onClick={nextImage}>›</button>
                   <div className="work__modal-dots">

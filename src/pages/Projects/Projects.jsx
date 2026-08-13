@@ -25,6 +25,13 @@ const MORE_PROJECTS = [
       '/projects/unfollow-spy/app-photo-4.webp',
       '/projects/unfollow-spy/app-photo-5.webp',
     ],
+    captions: [
+      { title: 'Informe de Followers', desc: 'Cruza tus listas exportadas de Meta para detectar traidores al instante.' },
+      { title: 'Comparativa', desc: 'Análisis cruzado entre seguidores y seguidos con marcas UNIX de tiempo.' },
+      { title: 'Reporte PDF', desc: 'Descarga un informe detallado de tu auditoría en PDF.' },
+      { title: 'Modo Oscuro', desc: 'Interfaz con tema oscuro y persistencia en localStorage.' },
+      { title: 'Tutorial Interactivo', desc: 'Recorrido guiado de 22 pasos para entender la herramienta.' },
+    ],
   },
   {
     id: 'inject-and-fill',
@@ -47,6 +54,14 @@ const MORE_PROJECTS = [
       '/projects/inject-and-fill/app-photo-5.webp',
       '/projects/inject-and-fill/app-photo-6.webp',
     ],
+    captions: [
+      { title: 'Side Panel', desc: 'Perfiles con campos mapeados listos para rellenar cualquier formulario.' },
+      { title: 'Editor de Perfiles', desc: 'Configura campos, valores y secuencias de ejecución por perfil.' },
+      { title: 'Detector de Campos', desc: 'Detecta inputs, selects, checkboxes y botones en la página.' },
+      { title: 'Selector Visual', desc: 'Selecciona elementos directamente sobre la página con un picker.' },
+      { title: 'Drag and Drop', desc: 'Reordena los pasos de cada perfil arrastrando y soltando.' },
+      { title: 'Motor de Ejecución', desc: 'Inyecta valores simulando eventos de React, Angular y Vue.' },
+    ],
   },
   {
     id: 'snake-game',
@@ -65,6 +80,11 @@ const MORE_PROJECTS = [
       '/projects/snake-game/app-photo-1.webp',
       '/projects/snake-game/app-photo-2.webp',
       '/projects/snake-game/app-photo-3.webp',
+    ],
+    captions: [
+      { title: 'Tablero de Juego', desc: 'Serpiente clásica con dificultad progresiva y velocidad creciente.' },
+      { title: 'Dashboard', desc: 'Historial de puntajes persistentes de tus partidas.' },
+      { title: 'Dificultad', desc: 'Tres niveles de dificultad configurables antes de jugar.' },
     ],
   },
   {
@@ -88,6 +108,13 @@ const MORE_PROJECTS = [
       '/projects/pseudorandom-number-generator/app-photo-3.webp',
       '/projects/pseudorandom-number-generator/app-photo-4.webp',
       '/projects/pseudorandom-number-generator/app-photo-5.webp',
+    ],
+    captions: [
+      { title: 'Generador Congruencial', desc: 'Produce números pseudoaleatorios con LCG y multiplicativo.' },
+      { title: 'Prueba Chi-Cuadrado', desc: 'Evalúa la uniformidad de la serie con esta prueba estadística.' },
+      { title: 'Prueba de Kolmogorov', desc: 'Compara la distribución generada contra la uniforme teórica.' },
+      { title: 'Prueba de Póker', desc: 'Verifica la independencia de los números con el método de Póker.' },
+      { title: 'Carrusel de Gráficas', desc: 'Visualizaciones animadas con tablas de frecuencia dinámicas.' },
     ],
   },
   {
@@ -114,6 +141,15 @@ const MORE_PROJECTS = [
       '/projects/clustered-penalty-predictor/app-photo-6.webp',
       '/projects/clustered-penalty-predictor/app-photo-7.webp',
     ],
+    captions: [
+      { title: 'Wizard de Datos', desc: 'Paso a paso para cargar y preparar los datos históricos de penales.' },
+      { title: 'Simulación en Vivo', desc: 'Animaciones del resultado del penal con el predictor en acción.' },
+      { title: 'Perfiles Conductuales', desc: 'Clusters descubiertos: Cold, Power, Pressure e Inexperienced.' },
+      { title: 'Matriz de Confusión', desc: 'Evalúa la precisión del clasificador Random Forest.' },
+      { title: 'Método del Codo', desc: 'Determina el número óptimo de clusters para K-Means.' },
+      { title: 'Comparativa de Modelos', desc: 'Métricas de evaluación de los modelos supervisados.' },
+      { title: 'API en vivo', desc: 'Backend FastAPI desplegado en Render.com listo para consultas.' },
+    ],
   },
   {
     id: 'space-orbit-dynamics',
@@ -133,6 +169,10 @@ const MORE_PROJECTS = [
     images: [
       '/projects/space-orbit-dynamics/app-photo-1.webp',
       '/projects/space-orbit-dynamics/app-photo-2.webp',
+    ],
+    captions: [
+      { title: 'Sistema Solar', desc: 'Simulación N-Body de Sol-Tierra-Luna con integrador RK4.' },
+      { title: 'Impactos de Asteroides', desc: 'Eventos dinámicos con trayectorias hiperbólicas y explosiones.' },
     ],
   },
   {
@@ -160,6 +200,14 @@ const MORE_PROJECTS = [
       '/projects/smtp-simulator/app-photo-5.webp',
       '/projects/smtp-simulator/app-photo-6.webp',
     ],
+    captions: [
+      { title: 'Simulación Estática', desc: 'Pares de comandos y respuestas SMTP para aprender lo básico.' },
+      { title: 'Compositor de Correos', desc: 'Configura remitente, destinatario, asunto y mensaje del correo.' },
+      { title: 'Topología de Red', desc: 'Canvas drag-and-drop para construir tus propias topologías.' },
+      { title: 'Panel de Log', desc: 'Registro en tiempo real de cada comando y respuesta SMTP.' },
+      { title: 'Simulación Dinámica', desc: 'Envía el correo a través de clientes y servidores relay.' },
+      { title: 'Ejemplo Pre-construido', desc: 'Topología lista para ejecutar una simulación al instante.' },
+    ],
   },
   {
     id: 'native-mobile-resources',
@@ -182,6 +230,12 @@ const MORE_PROJECTS = [
       '/projects/native-mobile-resources/app-photo-2.webp',
       '/projects/native-mobile-resources/app-photo-3.webp',
       '/projects/native-mobile-resources/app-photo-4.webp',
+    ],
+    captions: [
+      { title: 'Detección de Rostros', desc: 'Bounding boxes en tiempo real con Shape Detection API.' },
+      { title: 'Escáner QR y Barras', desc: 'Detecta códigos con identificación automática de URLs.' },
+      { title: 'Sensores', desc: 'Orientación y movimiento del dispositivo en 3D interactivo.' },
+      { title: 'Captura y Audio', desc: 'Grabación de pantalla y audio con visualizador de onda.' },
     ],
   },
   {
@@ -549,6 +603,12 @@ const Projects = () => {
                         alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
                         className="projects-page__modal-img"
                       />
+                      {selectedProject.captions && selectedProject.captions[currentImageIndex] && (
+                        <div className="projects-page__modal-img-caption">
+                          <span className="projects-page__modal-img-caption-title">{selectedProject.captions[currentImageIndex].title}</span>
+                          <span className="projects-page__modal-img-caption-desc">{selectedProject.captions[currentImageIndex].desc}</span>
+                        </div>
+                      )}
                     </div>
                     <button className="projects-page__modal-arrow projects-page__modal-arrow--right" onClick={nextImage}>›</button>
                     <div className="projects-page__modal-dots">

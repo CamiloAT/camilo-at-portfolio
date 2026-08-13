@@ -369,6 +369,43 @@
   display: block;
 }
 
+.projects-page__modal-img-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.6) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.projects-page__modal-image:hover .projects-page__modal-img-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-page__modal-img-caption-title {
+  font-family: var(--font-sans, var(--font-body));
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+  letter-spacing: 0.03em;
+}
+
+.projects-page__modal-img-caption-desc {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
 .projects-page__modal-arrow {
   position: absolute;
   top: 50%;
