@@ -524,7 +524,7 @@ const Work = () => {
                       <span
                         key={dotIndex}
                         className={`work__modal-dot ${dotIndex === currentImageIndex ? 'work__modal-dot--active' : ''}`}
-                        style={modalDotColors ? { background: modalDotColors[dotIndex] } : undefined}
+                        style={modalDotColors ? { '--dot-color': modalDotColors[dotIndex] } : undefined}
                         onClick={() => setCurrentImageIndex(dotIndex)}
                       />
                     ))}

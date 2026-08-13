@@ -299,17 +299,17 @@
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: var(--modal-accent-second);
+  color: var(--text-muted);
   background: transparent;
-  border: 1px solid var(--modal-accent-first);
+  border: 1px solid var(--border);
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s;
 }
 
 .projects-page__modal-close:hover {
-  border-color: var(--modal-accent-second);
-  color: var(--modal-accent-first);
+  border-color: var(--modal-accent-first);
+  color: var(--modal-accent-second);
 }
 
 .projects-page__modal-header {
@@ -459,16 +459,18 @@
 }
 
 .projects-page__modal-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--text-muted);
+  border: 2px solid var(--dot-color, var(--modal-accent-solid));
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .projects-page__modal-dot--active {
-  box-shadow: 0 0 0 3px var(--modal-accent-solid);
+  background: var(--dot-color, var(--modal-accent-solid));
+  border-color: var(--dot-color, var(--modal-accent-solid));
 }
 
 .projects-page__modal-desc {

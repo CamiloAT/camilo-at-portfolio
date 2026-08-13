@@ -647,7 +647,7 @@ const Projects = () => {
                         <span
                           key={dotIndex}
                           className={`projects-page__modal-dot ${dotIndex === currentImageIndex ? 'projects-page__modal-dot--active' : ''}`}
-                          style={modalDotColors ? { background: modalDotColors[dotIndex] } : undefined}
+                          style={modalDotColors ? { '--dot-color': modalDotColors[dotIndex] } : undefined}
                           onClick={() => setCurrentImageIndex(dotIndex)}
                         />
                       ))}
