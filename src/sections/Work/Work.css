@@ -580,7 +580,7 @@
   height: 10px;
   border-radius: 50%;
   background: var(--text-muted);
-  border: 2px solid var(--dot-color, var(--modal-accent-solid));
+  border: 1.5px solid var(--dot-color, var(--modal-accent-solid));
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -663,7 +663,7 @@
   text-transform: uppercase;
   padding: 0.4em 1em;
   border: 1px solid var(--border);
-  transition: all 0.3s;
+  transition: border-color 0.3s;
 }
 
 .work__modal-tag:hover {
