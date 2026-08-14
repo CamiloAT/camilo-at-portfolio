@@ -72,11 +72,11 @@ const PROJECTS = [
       '/projects/kiru/app-photo-5.webp',
     ],
     captions: [
-      { title: 'Generador de Plantillas', desc: 'Plantillas con diferentes conjuntos de caracteres para tu escritura.' },
-      { title: 'Carga de Imagen', desc: 'Sube fotos de tu letra manuscrita para procesarla.' },
-      { title: 'Editor de Glifos', desc: 'Dibuja, borra, mueve y escala cada carácter.' },
-      { title: 'Vectorización', desc: 'Convierte bitmaps en contornos suavizados.' },
-      { title: 'Previsualización', desc: 'Sandbox para probar la fuente con textos de ejemplo y descargarla.' },
+      { title: 'Página de Inicio', desc: 'Presentación de la plataforma y acceso principal para iniciar el proceso de conversión tipográfica.' },
+      { title: 'Galería de Fuentes', desc: 'Sección para explorar y previsualizar tipografías digitales creadas por otros usuarios.' },
+      { title: 'Afinar Letras (Matriz de Glifos)', desc: 'Cuadrícula de revisión general con todos los caracteres segmentados listos para ajustar.' },
+      { title: 'Editor de Glifos', desc: 'Modal de edición individual para retocar, borrar, mover, escalar o redibujar cada carácter.' },
+      { title: 'Sandbox y Descarga (.ttf)', desc: 'Entorno de prueba en tiempo real para personalizar texto, tamaño, espaciado y exportar la fuente.' },
     ],
   },
   {
