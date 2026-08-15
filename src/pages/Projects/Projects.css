@@ -770,6 +770,54 @@
   color: var(--bg-deep);
 }
 
+/* Space Orbit Dynamics modal overrides */
+.projects-page__modal--stars::before {
+  background: radial-gradient(circle at 8% 50%, rgba(200,210,230,0.25) 1px, transparent 1px),
+              radial-gradient(circle at 28% 50%, rgba(200,210,230,0.2) 1px, transparent 1px),
+              radial-gradient(circle at 48% 50%, rgba(200,210,230,0.3) 1px, transparent 1px),
+              radial-gradient(circle at 68% 50%, rgba(200,210,230,0.2) 1px, transparent 1px),
+              radial-gradient(circle at 88% 50%, rgba(200,210,230,0.25) 1px, transparent 1px),
+              #1e1547;
+}
+
+.projects-page__modal--stars .projects-page__modal-close:hover {
+  border-color: #1e1547;
+  color: #e8a830;
+  background: rgba(30, 21, 71, 0.3);
+}
+
+.projects-page__modal--stars .projects-page__modal-img-caption-title {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: #e8a830;
+  color: #e8a830;
+}
+
+.projects-page__modal--stars .projects-page__modal-dot {
+  border-color: #1e1547;
+  background: transparent;
+}
+
+.projects-page__modal--stars .projects-page__modal-dot--active {
+  background: #e8a830;
+  border-color: #e8a830;
+}
+
+.projects-page__modal--stars .projects-page__modal-tag {
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+.projects-page__modal--stars .projects-page__modal-tag:hover {
+  border-color: #1e1547;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: #e8a830;
+  color: #e8a830;
+}
+
 @media (max-width: 768px) {
   .projects-page {
     padding: calc(3.5rem + var(--space-lg)) var(--space-md) var(--space-3xl);

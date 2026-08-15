@@ -608,7 +608,7 @@ const Projects = () => {
             onClick={closeModal}
           >
             <motion.div
-              className="projects-page__modal"
+              className={`projects-page__modal${selectedProject.stars ? ' projects-page__modal--stars' : ''}`}
               style={{ '--modal-accent': selectedProject.accent, '--modal-accent-solid': modalAccent, '--modal-accent-grad': modalAccentGrad, '--modal-accent-line': modalAccentLine, '--modal-accent-first': gradFirst, '--modal-accent-second': gradSecond }}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
