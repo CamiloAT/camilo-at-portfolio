@@ -487,6 +487,16 @@
   display: block;
 }
 
+.work__modal-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.work__modal-video {
+  -webkit-appearance: none;
+  appearance: none;
+  controls: none;
+}
+
 .work__modal-image-placeholder {
   width: 100%;
   height: 100%;

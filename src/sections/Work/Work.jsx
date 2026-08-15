@@ -500,18 +500,30 @@ const Work = () => {
                 <div className="work__modal-carousel">
                   <button className="work__modal-arrow work__modal-arrow--left" onClick={prevImage}>‹</button>
                   <div className="work__modal-image">
-                    <img
-                      src={selectedProject.images[currentImageIndex]}
-                      alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                      className="work__modal-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none'
-                        e.target.nextSibling.style.display = 'flex'
-                      }}
-                    />
-                    <div className="work__modal-image-placeholder" style={{ display: 'none' }}>
-                      <span>Screenshot {currentImageIndex + 1}</span>
-                    </div>
+                    {/\.(mp4|webm|ogg)$/i.test(selectedProject.images[currentImageIndex]) ? (
+                      <video
+                        src={selectedProject.images[currentImageIndex]}
+                        className="work__modal-img work__modal-video"
+                        autoPlay
+                        muted
+                        loop
+                      />
+                    ) : (
+                      <>
+                        <img
+                          src={selectedProject.images[currentImageIndex]}
+                          alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
+                          className="work__modal-img"
+                          onError={(e) => {
+                            e.target.style.display = 'none'
+                            e.target.nextSibling.style.display = 'flex'
+                          }}
+                        />
+                        <div className="work__modal-image-placeholder" style={{ display: 'none' }}>
+                          <span>Screenshot {currentImageIndex + 1}</span>
+                        </div>
+                      </>
+                    )}
                     {selectedProject.captions && selectedProject.captions[currentImageIndex] && (
                       <div className="work__modal-img-caption">
                         <span className="work__modal-img-caption-title">{selectedProject.captions[currentImageIndex].title}</span>

@@ -382,6 +382,16 @@
   display: block;
 }
 
+.projects-page__modal-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.projects-page__modal-video {
+  -webkit-appearance: none;
+  appearance: none;
+  controls: none;
+}
+
 .projects-page__modal-img-caption {
   position: absolute;
   left: 0;

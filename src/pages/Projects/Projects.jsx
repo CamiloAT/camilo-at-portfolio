@@ -79,11 +79,13 @@ const MORE_PROJECTS = [
     images: [
       '/projects/snake-game/app-photo-1.webp',
       '/projects/snake-game/app-photo-2.webp',
+      '/projects/snake-game/gameplay.mp4',
       '/projects/snake-game/app-photo-3.webp',
     ],
     captions: [
       { title: 'Menú Principal', desc: 'Pantalla de bienvenida para ingresar el nombre del jugador, seleccionar la dificultad e iniciar la partida.' },
       { title: 'Tablero de Juego', desc: 'Interfaz clásica con cuadrícula interactiva, marcador de puntuación en tiempo real y obstáculos en el mapa.' },
+      { title: 'Gameplay', desc: 'Video de demostración del juego en funcionamiento en el nivel más alto de dificultad.' },
       { title: 'Historial de Puntajes', desc: 'Tabla persistente con el registro de partidas, mostrando jugador, puntuación, fecha, hora y nivel seleccionado.' },
     ],
   },
@@ -629,11 +631,21 @@ const Projects = () => {
                   <div className="projects-page__modal-carousel">
                     <button className="projects-page__modal-arrow projects-page__modal-arrow--left" onClick={prevImage}>‹</button>
                     <div className="projects-page__modal-image">
-                      <img
-                        src={selectedProject.images[currentImageIndex]}
-                        alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                        className="projects-page__modal-img"
-                      />
+                      {/\.(mp4|webm|ogg)$/i.test(selectedProject.images[currentImageIndex]) ? (
+                        <video
+                          src={selectedProject.images[currentImageIndex]}
+                          className="projects-page__modal-img projects-page__modal-video"
+                          autoPlay
+                          muted
+                          loop
+                        />
+                      ) : (
+                        <img
+                          src={selectedProject.images[currentImageIndex]}
+                          alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
+                          className="projects-page__modal-img"
+                        />
+                      )}
                       {selectedProject.captions && selectedProject.captions[currentImageIndex] && (
                         <div className="projects-page__modal-img-caption">
                           <span className="projects-page__modal-img-caption-title">{selectedProject.captions[currentImageIndex].title}</span>
