@@ -82,9 +82,9 @@ const MORE_PROJECTS = [
       '/projects/snake-game/app-photo-3.webp',
     ],
     captions: [
-      { title: 'Tablero de Juego', desc: 'Serpiente clásica con dificultad progresiva y velocidad creciente.' },
-      { title: 'Dashboard', desc: 'Historial de puntajes persistentes de tus partidas.' },
-      { title: 'Dificultad', desc: 'Tres niveles de dificultad configurables antes de jugar.' },
+      { title: 'Menú Principal', desc: 'Pantalla de bienvenida para ingresar el nombre del jugador, seleccionar la dificultad e iniciar la partida.' },
+      { title: 'Tablero de Juego', desc: 'Interfaz clásica con cuadrícula interactiva, marcador de puntuación en tiempo real y obstáculos en el mapa.' },
+      { title: 'Historial de Puntajes', desc: 'Tabla persistente con el registro de partidas, mostrando jugador, puntuación, fecha, hora y nivel seleccionado.' },
     ],
   },
   {
