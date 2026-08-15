@@ -36,8 +36,8 @@ A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/CamiloAT/caat-artifacts.git
-   cd caat-artifacts
+   git clone https://github.com/CamiloAT/camilo-at-portfolio.git
+   cd camilo-at-portfolio
    ```
 
 2. **Install dependencies**
