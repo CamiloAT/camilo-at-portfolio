@@ -51,7 +51,7 @@ const TECH_CATEGORIES = [
     items: [
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1', logo: '/projects/tech/brown/postgresql.svg', logoHover: '/projects/tech/color/postgresql.svg' },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248', logo: '/projects/tech/brown/mongodb.svg', logoHover: '/projects/tech/color/mongodb.svg' },
-      { name: 'MySQL', icon: SiMysql, color: '#4479A1', logo: '/projects/tech/brown/mysql.svg', logoHover: '/projects/tech/color/mysql.svg' },
+      { name: 'MySQL', icon: SiMysql, color: '#4479A1', logo: '/projects/tech/brown/mysql.svg', logoHover: '/projects/tech/color/mysql.svg', logoSize: 'lg' },
       { name: 'MariaDB', icon: SiMariadb, color: '#003545' },
     ],
   },
@@ -60,7 +60,7 @@ const TECH_CATEGORIES = [
     items: [
       { name: 'Docker', icon: SiDocker, color: '#2496ED' },
       { name: 'Git', icon: SiGit, color: '#F05032' },
-      { name: 'Linux', icon: SiLinux, color: '#FCC624', logo: '/projects/tech/brown/linux.svg', logoHover: '/projects/tech/color/linux.svg' },
+      { name: 'Linux', icon: SiLinux, color: '#FCC624', logo: '/projects/tech/brown/linux.svg', logoHover: '/projects/tech/color/linux.svg', logoSize: 'md' },
       { name: 'CI/CD', icon: SiGithubactions, color: '#2088D9' },
       { name: 'Cybersecurity', icon: HiShieldCheck, color: '#00CED1' },
     ],
@@ -128,11 +128,11 @@ const Craft = () => {
                     >
                       {tech.logo ? (
                         <>
-                          <img src={tech.logo} alt={tech.name} className="craft__tech-logo" />
-                          <img src={tech.logoHover} alt={tech.name} className="craft__tech-logo craft__tech-logo--hover" />
+                          <img src={tech.logo} alt={tech.name} className={`craft__tech-logo${tech.logoSize ? ` craft__tech-logo--${tech.logoSize}` : ''}`} />
+                          <img src={tech.logoHover} alt={tech.name} className={`craft__tech-logo craft__tech-logo--hover${tech.logoSize ? ` craft__tech-logo--${tech.logoSize}` : ''}`} />
                         </>
                       ) : (
-                        <Icon className="craft__tech-icon" size={16} />
+                        <Icon className="craft__tech-icon" size={18} />
                       )}
                       <span className="craft__tech-name">{tech.name}</span>
                     </motion.div>
