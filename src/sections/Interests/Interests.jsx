@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { FaMusic, FaCode, FaHeadphones, FaPlay, FaPause, FaGuitar, FaWalking, FaBroadcastTower, FaStepBackward, FaStepForward, FaTimes, FaBars } from 'react-icons/fa'
+import { MorphIcon } from 'morphicons/react'
+import { Play, Pause } from 'lucide'
+import { FaMusic, FaCode, FaHeadphones, FaGuitar, FaWalking, FaBroadcastTower, FaStepBackward, FaStepForward, FaTimes, FaBars } from 'react-icons/fa'
 import './Interests.css'
 
 const INTERESTS = [
@@ -363,7 +365,12 @@ const Interests = () => {
                       <FaStepBackward size={12} />
                     </button>
                     <button className="floating-player__ctrl floating-player__ctrl--play" onClick={togglePlay} disabled={!playerReady}>
-                      {isPlaying ? <FaPause size={12} /> : <FaPlay size={12} />}
+                      <MorphIcon
+                        icon={isPlaying ? Pause : Play}
+                        spring="bouncy"
+                        strokeWidth={1.5}
+                        className="floating-player__morph-icon"
+                      />
                     </button>
                     <button className="floating-player__ctrl" onClick={playNext}>
                       <FaStepForward size={12} />
@@ -420,7 +427,12 @@ const Interests = () => {
                         </div>
                       </div>
                       <button className="playlist-modal__item-play" onClick={(e) => { e.stopPropagation(); toggleTrack(index); }}>
-                        {index === currentTrack && isPlaying ? <FaPause size={10} /> : <FaPlay size={10} />}
+                        <MorphIcon
+                          icon={index === currentTrack && isPlaying ? Pause : Play}
+                          spring="bouncy"
+                          strokeWidth={1.5}
+                          className="playlist-modal__morph-icon"
+                        />
                       </button>
                     </div>
                   ))}

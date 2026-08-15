@@ -568,7 +568,12 @@
 }
 
 .floating-player__ctrl--play svg {
-  margin-left: 2px;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0.5;
+  paint-order: stroke fill;
 }
 
 @media (max-width: 768px) {
@@ -654,9 +659,12 @@
   }
 
   .floating-player__ctrl--play svg {
-    width: 11px;
-    height: 11px;
-    margin-left: 1px;
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 0.5;
+    paint-order: stroke fill;
   }
 }
 
@@ -826,4 +834,13 @@
   background: var(--accent-primary);
   color: var(--bg-deep);
   border-color: var(--accent-primary);
+}
+
+.playlist-modal__item-play svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0.5;
+  paint-order: stroke fill;
 }
