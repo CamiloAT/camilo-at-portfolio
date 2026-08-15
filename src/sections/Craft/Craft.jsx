@@ -37,7 +37,7 @@ const TECH_CATEGORIES = [
   {
     name: 'Backend & APIs',
     items: [
-      { name: 'Java', icon: SiOpenjdk, color: '#F89820' },
+      { name: 'Java', icon: SiOpenjdk, color: '#F89820', logo: '/projects/tech/brown/java.svg', logoHover: '/projects/tech/color/java.svg', logoSize: 'lg' },
       { name: 'Spring Boot', icon: SiSpringboot, color: '#6DB33F' },
       { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
       { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
