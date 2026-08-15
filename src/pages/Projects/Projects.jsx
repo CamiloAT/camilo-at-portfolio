@@ -161,7 +161,9 @@ const MORE_PROJECTS = [
     description: 'Simulador gravitacional N-Body en tiempo real del sistema Sol-Tierra-Luna con impactos de asteroides e integrador RK4.',
     fullDescription: 'Simulador gravitacional N-Body en tiempo real que modela el sistema Sol-Tierra-Luna con impactos de asteroides interactivos, impulsado por un integrador numerico Runge-Kutta de cuarto orden implementado a mano. Incluye tracking en tiempo real de conservacion de energia mecanica, eventos dinamicos de asteroides con trayectorias hiperbolicas y efectos de explosion animados, controles interactivos con sliders para velocidades y paso de integracion, y una visualizacion pulida con tema de espacio profundo, estrellas estaticas, halos brillantes, capas de atmosfera y estelas de movimiento.',
     logo: null,
-    accent: 'radial-gradient(circle at 2% 50%, rgba(255,255,255,1) 0.5px, transparent 0.5px), radial-gradient(circle at 7% 50%, rgba(255,255,255,0.6) 0.5px, transparent 0.5px), radial-gradient(circle at 12% 50%, rgba(255,255,255,0.9) 0.5px, transparent 0.5px), radial-gradient(circle at 18% 50%, rgba(255,255,255,0.5) 0.5px, transparent 0.5px), radial-gradient(circle at 23% 50%, rgba(255,255,255,1) 0.5px, transparent 0.5px), radial-gradient(circle at 29% 50%, rgba(255,255,255,0.7) 0.5px, transparent 0.5px), radial-gradient(circle at 34% 50%, rgba(255,255,255,0.8) 0.5px, transparent 0.5px), radial-gradient(circle at 40% 50%, rgba(255,255,255,0.5) 0.5px, transparent 0.5px), radial-gradient(circle at 45% 50%, rgba(255,255,255,1) 0.5px, transparent 0.5px), radial-gradient(circle at 51% 50%, rgba(255,255,255,0.6) 0.5px, transparent 0.5px), radial-gradient(circle at 56% 50%, rgba(255,255,255,0.9) 0.5px, transparent 0.5px), radial-gradient(circle at 62% 50%, rgba(255,255,255,0.5) 0.5px, transparent 0.5px), radial-gradient(circle at 67% 50%, rgba(255,255,255,1) 0.5px, transparent 0.5px), radial-gradient(circle at 73% 50%, rgba(255,255,255,0.7) 0.5px, transparent 0.5px), radial-gradient(circle at 78% 50%, rgba(255,255,255,0.8) 0.5px, transparent 0.5px), radial-gradient(circle at 84% 50%, rgba(255,255,255,0.5) 0.5px, transparent 0.5px), radial-gradient(circle at 90% 50%, rgba(255,255,255,1) 0.5px, transparent 0.5px), radial-gradient(circle at 96% 50%, rgba(255,255,255,0.6) 0.5px, transparent 0.5px), #1e1547',
+    accent: 'radial-gradient(circle at 3% 12%, #fff 1px, transparent 1px), radial-gradient(circle at 11% 67%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 19% 34%, #fff 1.1px, transparent 1.1px), radial-gradient(circle at 25% 88%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 32% 15%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 40% 52%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 47% 78%, #fff 1px, transparent 1px), radial-gradient(circle at 53% 8%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 60% 41%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 68% 92%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 75% 25%, #fff 1px, transparent 1px), radial-gradient(circle at 82% 63%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 88% 4%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 94% 71%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 7% 45%, #fff 1px, transparent 1px), radial-gradient(circle at 15% 90%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 36% 5%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 58% 82%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 71% 18%, #fff 1px, transparent 1px), radial-gradient(circle at 96% 55%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 5% 72%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 22% 55%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 28% 3%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 34% 80%, #fff 1px, transparent 1px), radial-gradient(circle at 44% 28%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 50% 62%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 56% 15%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 63% 50%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 70% 75%, #fff 1px, transparent 1px), radial-gradient(circle at 77% 8%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 84% 42%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 90% 85%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 97% 20%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 9% 25%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 42% 95%, #fff 0.9px, transparent 0.9px), radial-gradient(circle at 65% 35%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 80% 58%, #fff 0.7px, transparent 0.7px), radial-gradient(circle at 92% 10%, #fff 1px, transparent 1px), radial-gradient(circle at 13% 50%, #fff 0.8px, transparent 0.8px), radial-gradient(circle at 48% 40%, #fff 0.7px, transparent 0.7px), #1e1547',
+    lineColor: '#4a3a8a',
+    stars: true,
     tags: ['Python', 'NumPy', 'Matplotlib', 'RK4', 'N-Body'],
     collaborators: [
       { name: 'Jose Luis Ortega Castillo', github: 'https://github.com/JoseOrtegaUPTC' },
@@ -518,14 +520,21 @@ const Projects = () => {
           {MORE_PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
-              className="projects-page__item"
+              className={`projects-page__item${project.stars ? ' projects-page__item--stars' : ''}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              style={{ '--project-accent': project.accent }}
+              style={{ '--project-accent': project.accent, '--project-line-color': project.lineColor || project.accent }}
               onClick={(e) => handleProjectClick(project, e)}
             >
               <div className="projects-page__item-line" />
+              {project.stars && (
+                <>
+                  <div className="projects-page__item-meteor projects-page__item-meteor--a" />
+                  <div className="projects-page__item-meteor projects-page__item-meteor--b" />
+                  <div className="projects-page__item-meteor projects-page__item-meteor--c" />
+                </>
+              )}
               <div className="projects-page__item-left">
                 <span className="projects-page__item-number">
                   {String(index + 1).padStart(2, '0')}
