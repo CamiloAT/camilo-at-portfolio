@@ -133,12 +133,12 @@ const PROJECTS = [
       '/projects/emperator-penguin-survival-sim/app-photo-6.webp',
     ],
     captions: [
-      { title: 'Simulación 2D', desc: 'Vista en Canvas con los agentes individuales del huddle.' },
-      { title: 'Simulación 3D', desc: 'Visualización tridimensional con Three.js.' },
-      { title: 'Dashboard', desc: 'Métricas en tiempo real de la simulación.' },
-      { title: 'Gráficas Históricas', desc: 'Evolución temporal con Recharts.' },
-      { title: 'Diagrama Causal', desc: 'Modelo de relaciones del sistema con React Flow.' },
-      { title: 'Documentación', desc: 'Modelo completo con ecuaciones y metodología PASSI.' },
+      { title: 'Página de Inicio', desc: 'Presentación del simulador con introducción al modelo y métricas antárticas iniciales.' },
+      { title: 'Pantalla de Carga', desc: 'Inicialización del entorno de simulación y carga de parámetros.' },
+      { title: 'Simulación 2D y Controles', desc: 'Vista superior del agrupamiento y panel para ajustar variables del modelo.' },
+      { title: 'Vista 3D Inmersiva', desc: 'Entorno tridimensional interactivo en Three.js para observar la dinámica de la colonia.' },
+      { title: 'Selección de Modelo', desc: 'Modal para configurar y personalizar los agentes 3D de los pingüinos.' },
+      { title: 'Estadísticas Avanzadas', desc: 'Panel de métricas con gráficas de temperatura, energía y supervivencia.' },
     ],
   },
   {
