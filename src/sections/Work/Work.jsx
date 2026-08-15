@@ -118,6 +118,7 @@ const PROJECTS = [
     fullDescription: 'Emperor Penguin Survival Sim es una aplicación web de modelado basado en agentes (ABM) que simula el comportamiento de huddles de pingüinos emperador durante los 92 días del invierno antártico. El modelo captura la termindividual de cada pingüino, las dinámicas de rotación del huddle y el riesgo estocástico de pérdida de huevos y congelación en el hielo expuesto. Incluye un motor de simulación con agentes individuales que poseen temperatura corporal, reservas de grasa, energía y estado de vida, vista dual en 2D Canvas y 3D con Three.js, dashboard en tiempo real, gráficas históricas con Recharts, diagrama causal de fljo y documentación completa del modelo con ecuaciones y metodología PASSI.\n\nProyecto de asignatura de Simulación enfocado en sistemas multiagentes. Fue mi primer contacto con la librería Three.js, la cual me pareció muy interesante y versátil para muchos tipos de proyectos, desde visualizaciones científicas hasta experiencias inmersivas 3D.',
     logo: '/projects/emperator-penguin-survival-sim/emperator-penguir-survival-sim-logo.png',
     accent: '#f97316',
+    gradient: 'linear-gradient(135deg, #f97316 0%, #ec4899 100%)',
     tags: ['React', 'Three.js', 'Recharts', 'React Flow', 'Vite'],
     collaborators: [
       { name: 'Jose Luis Ortega Castillo', github: 'https://github.com/JoseOrtegaUPTC' },
