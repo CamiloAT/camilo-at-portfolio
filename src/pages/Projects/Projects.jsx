@@ -175,8 +175,8 @@ const MORE_PROJECTS = [
       '/projects/space-orbit-dynamics/app-photo-2.webp',
     ],
     captions: [
-      { title: 'Sistema Solar', desc: 'Simulación N-Body de Sol-Tierra-Luna con integrador RK4.' },
-      { title: 'Impactos de Asteroides', desc: 'Eventos dinámicos con trayectorias hiperbólicas y explosiones.' },
+      { title: 'Órbita Estable y Controles', desc: 'Sistema Sol-Tierra-Luna con trazado de órbitas, parámetros RK4 y gráfico de energía.' },
+      { title: 'Inyección de Asteroides', desc: 'Trayectorias hiperbólicas e interacciones gravitacionales tras introducir asteroides.' },
     ],
   },
   {
