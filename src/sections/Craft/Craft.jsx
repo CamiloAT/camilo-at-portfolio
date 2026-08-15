@@ -124,7 +124,6 @@ const Craft = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: catIndex * 0.1 + techIndex * 0.05 }}
-                      whileHover={{ scale: 1.05, y: -2 }}
                       style={{ '--tech-color': tech.color }}
                     >
                       <Icon className="craft__tech-icon" size={16} />

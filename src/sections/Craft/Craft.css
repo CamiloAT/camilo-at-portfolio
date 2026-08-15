@@ -89,12 +89,13 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   cursor: default;
-  transition: border-color 0.25s, box-shadow 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s ease;
 }
 
 .craft__tech:hover {
   border-color: var(--tech-color);
   box-shadow: 0 0 14px color-mix(in srgb, var(--tech-color) 25%, transparent);
+  transform: scale(1.05) translateY(-2px) !important;
 }
 
 .craft__tech:hover .craft__tech-icon {
