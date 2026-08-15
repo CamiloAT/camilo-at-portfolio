@@ -354,6 +354,8 @@
     max-width: 120px;
     text-align: center;
     line-height: 1.3;
+    flex-direction: column;
+    gap: 0.3rem;
   }
 
   .work__project-hint-timer {
