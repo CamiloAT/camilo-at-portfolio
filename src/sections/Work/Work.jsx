@@ -101,12 +101,12 @@ const PROJECTS = [
       '/projects/deck-royale/app-photo-6.webp',
     ],
     captions: [
-      { title: 'Sala de Espera', desc: 'Configuración de blinds, buy-in y agregar amigos.' },
-      { title: 'Mesa de Juego', desc: 'Mesa con las cartas y acciones del turno actual.' },
-      { title: 'Avatares Animados', desc: 'Avatares SVG con animaciones y personalización.' },
-      { title: 'Side Pots', desc: 'Manejo de botes laterales en manos con all-in.' },
-      { title: 'Temporizador', desc: 'Cuenta regresiva de 60 segundos con semáforo de color.' },
-      { title: 'Fin de Juego', desc: 'Modal con estadísticas detalladas y celebración con confetti.' },
+      { title: 'Lobby Principal', desc: 'Interfaz de inicio para ingresar un apodo y crear o unirse a una sala privada.' },
+      { title: 'Pantalla de Carga', desc: 'Transición de conexión inicial y sincronización con el servidor de la partida.' },
+      { title: 'Selección de Avatar', desc: 'Modal de personalización para elegir entre distintos avatares temáticos en formato SVG.' },
+      { title: 'Mesa de Juego', desc: 'Interfaz principal del juego con cartas comunitarias, acciones, ficheras y temporizador por turno.' },
+      { title: 'Showdown (Revelación)', desc: 'Pantalla de revelación de manos al finalizar la ronda para determinar al jugador ganador del bote.' },
+      { title: 'Partida Finalizada', desc: 'Modal de cierre de juego con tabla de posiciones, estadísticas finales y balance de fichas.' },
     ],
   },
   {
