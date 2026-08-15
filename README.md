@@ -4,6 +4,8 @@
 [![Vite](https://img.shields.io/badge/Vite-8.1-purple?logo=vite&logoColor=white)](https://vite.dev/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.42-black)](https://www.framer.com/motion/)
 [![React Router](https://img.shields.io/badge/React_Router-7.18-ca4f4f?logo=reactrouter&logoColor=white)](https://reactrouter.com/)
+[![Morphicons](https://img.shields.io/badge/Morphicons-1.7-ff6b9d)](https://morphicons.com/)
+[![Lucide](https://img.shields.io/badge/Lucide-1.31-black)](https://lucide.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo AT), a Systems Engineer from UPTC. Built with a dark brown/amber color scheme, scroll-driven animations, and a film strip aesthetic — designed to stand out from generic developer portfolios.
@@ -14,8 +16,8 @@ A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo 
 
 - **Cinematic Preloader** — Animated countdown with SVG VHS noise and film strip borders that fade in after loading
 - **Scroll-Driven Animations** — Every section uses Framer Motion scroll-triggered reveals, parallax effects, and clip-path transitions
-- **Floating Music Player** — YouTube IFrame API integration with a 10-song playlist, play/pause/prev/next controls, equalizer animation, and a playlist modal
-- **Interactive Project Modals** — Detailed project views with image carousels, CLI terminal outputs, collaborator links, and tech stack tags
+- **Floating Music Player** — YouTube IFrame API integration with a 10-song playlist, play/pause/prev/next controls with morphicons morphing animation, equalizer animation, and a playlist modal
+- **Interactive Project Modals** — Detailed project views with image carousels, hover captions (title + description), per-project accent colors (top line, tags, dots, close button), CLI terminal outputs, collaborator links, and tech stack tags
 - **Dock Navigation** — Fixed navigation with section-aware scroll offsets for both desktop and mobile viewports
 - **Fully Responsive** — Adaptive layouts for mobile with stacked cards, top navigation bar, and optimized typography
 
@@ -51,7 +53,7 @@ A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo 
 4. **Open in browser**
    Navigate to `http://localhost:5173`
 
-> **Note:** The project uses YouTube IFrame API for the music player. An internet connection is required for the playlist functionality to work.
+> **Note:** The project uses YouTube IFrame API for the music player and morphicons for the play/pause morphing animation. An internet connection is required for the playlist functionality to work.
 
 > **Note:** Custom font `Andres` is included in `public/fonts/` and used for the philosophy quote, and footer name.
 
@@ -106,7 +108,7 @@ camilo-at-repository/
 | **Build Tool** | Vite 8.1 |
 | **Routing** | React Router 7.18 |
 | **Animation** | Framer Motion 12.42 |
-| **Icons** | React Icons 5.7 (Simple Icons) |
+| **Icons** | React Icons 5.7 (Simple Icons), Morphicons 1.7 (morphing), Lucide (icon data) |
 | **Music API** | YouTube IFrame API |
 | **Fonts** | Cormorant Garamond, Space Grotesk, JetBrains Mono, PT Serif, Andres (custom) |
 | **Deployment** | Vercel |
