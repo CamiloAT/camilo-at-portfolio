@@ -26,6 +26,8 @@ const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev
 
   const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url)
   const caption = captions && captions[currentIndex]
+  const isGradient = accentVars?.['--modal-accent-grad']?.includes('gradient')
+  const arrowClass = `lightbox-arrow${isGradient ? ' lightbox-arrow--gradient' : ''}`
 
   return createPortal(
     <div className="lightbox-overlay" onClick={onClose} style={accentVars}>
@@ -58,8 +60,8 @@ const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev
 
       {images.length > 1 && (
         <div className="lightbox-controls" onClick={(e) => e.stopPropagation()}>
-          <button className="lightbox-arrow" onClick={onPrev}>‹</button>
-          <button className="lightbox-arrow" onClick={onNext}>›</button>
+          <button className={arrowClass} onClick={onPrev}>‹</button>
+          <button className={arrowClass} onClick={onNext}>›</button>
         </div>
       )}
 

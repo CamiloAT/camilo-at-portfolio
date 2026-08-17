@@ -125,8 +125,14 @@
 }
 
 .lightbox-arrow:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+  border-color: var(--modal-accent-second, var(--accent-primary));
+  color: var(--modal-accent-second, var(--accent-primary));
+}
+
+.lightbox-arrow--gradient:hover {
+  border: 2px solid transparent;
+  border-image: var(--modal-accent-grad) 1;
+  color: var(--modal-accent-first, var(--accent-primary));
 }
 
 .lightbox-dots {
