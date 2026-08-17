@@ -59,22 +59,21 @@ const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev
       </div>
 
       {images.length > 1 && (
-        <div className="lightbox-controls" onClick={(e) => e.stopPropagation()}>
-          <button className={arrowClass} onClick={onPrev}>‹</button>
-          <button className={arrowClass} onClick={onNext}>›</button>
-        </div>
-      )}
-
-      {images.length > 1 && (
-        <div className="lightbox-dots" onClick={(e) => e.stopPropagation()}>
-          {images.map((_, i) => (
-            <span
-              key={i}
-              className={`lightbox-dot ${i === currentIndex ? 'lightbox-dot--active' : ''}`}
-              style={dotColors && dotColors[i] ? { '--dot-color': dotColors[i] } : undefined}
-              onClick={() => onDotClick(i)}
-            />
-          ))}
+        <div className="lightbox-bottom" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-controls">
+            <button className={arrowClass} onClick={onPrev}>‹</button>
+            <button className={arrowClass} onClick={onNext}>›</button>
+          </div>
+          <div className="lightbox-dots">
+            {images.map((_, i) => (
+              <span
+                key={i}
+                className={`lightbox-dot ${i === currentIndex ? 'lightbox-dot--active' : ''}`}
+                style={dotColors && dotColors[i] ? { '--dot-color': dotColors[i] } : undefined}
+                onClick={() => onDotClick(i)}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>,
