@@ -650,7 +650,14 @@ const Work = () => {
         currentIndex={currentImageIndex}
         onPrev={prevImage}
         onNext={nextImage}
+        onDotClick={setCurrentImageIndex}
         dotColors={modalDotColors}
+        accentVars={{
+          '--modal-accent-first': gradFirst,
+          '--modal-accent-second': gradSecond,
+          '--modal-accent-solid': modalAccent,
+          '--modal-accent-grad': modalAccentGrad,
+        }}
       />
     </section>
   )

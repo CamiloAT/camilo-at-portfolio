@@ -2,7 +2,7 @@ import { useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import './ImageLightbox.css'
 
-const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev, onNext, dotColors }) => {
+const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev, onNext, onDotClick, dotColors, accentVars }) => {
   const handleKeyDown = useCallback((e) => {
     if (!isOpen) return
     if (e.key === 'Escape') onClose()
@@ -28,7 +28,7 @@ const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev
   const caption = captions && captions[currentIndex]
 
   return createPortal(
-    <div className="lightbox-overlay" onClick={onClose}>
+    <div className="lightbox-overlay" onClick={onClose} style={accentVars}>
       <button className="lightbox-close" onClick={onClose}>×</button>
 
       {caption && (
@@ -54,23 +54,23 @@ const ImageLightbox = ({ isOpen, onClose, images, captions, currentIndex, onPrev
             className="lightbox-img"
           />
         )}
-
-        {images.length > 1 && (
-          <>
-            <button className="lightbox-arrow lightbox-arrow--left" onClick={onPrev}>‹</button>
-            <button className="lightbox-arrow lightbox-arrow--right" onClick={onNext}>›</button>
-          </>
-        )}
       </div>
 
       {images.length > 1 && (
-        <div className="lightbox-dots">
+        <div className="lightbox-controls" onClick={(e) => e.stopPropagation()}>
+          <button className="lightbox-arrow" onClick={onPrev}>‹</button>
+          <button className="lightbox-arrow" onClick={onNext}>›</button>
+        </div>
+      )}
+
+      {images.length > 1 && (
+        <div className="lightbox-dots" onClick={(e) => e.stopPropagation()}>
           {images.map((_, i) => (
             <span
               key={i}
               className={`lightbox-dot ${i === currentIndex ? 'lightbox-dot--active' : ''}`}
-              style={dotColors && dotColors[i] ? { background: i === currentIndex ? dotColors[i] : 'rgba(255,255,255,0.2)', borderColor: dotColors[i] } : undefined}
-              onClick={(e) => { e.stopPropagation(); /* dots navigate via parent state */ }}
+              style={dotColors && dotColors[i] ? { '--dot-color': dotColors[i] } : undefined}
+              onClick={() => onDotClick(i)}
             />
           ))}
         </div>
