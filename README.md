@@ -8,18 +8,20 @@
 [![Lucide](https://img.shields.io/badge/Lucide-1.31-black)](https://lucide.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo AT), a Systems Engineer from UPTC. Built with a dark brown/amber color scheme, scroll-driven animations, and a film strip aesthetic — designed to stand out from generic developer portfolios.
+A cinematic immersive personal portfolio for Camilo Andrés Arias Tenjo (Camilo AT), a Systems Engineer from UPTC. Built with a dark brown/amber color scheme, scroll-driven animations, and a film strip aesthetic, designed to stand out from generic developer portfolios.
 
 ---
 
 ## Main Features
 
-- **Cinematic Preloader** — Animated countdown with SVG VHS noise and film strip borders that fade in after loading
-- **Scroll-Driven Animations** — Every section uses Framer Motion scroll-triggered reveals, parallax effects, and clip-path transitions
-- **Floating Music Player** — YouTube IFrame API integration with a 10-song playlist, play/pause/prev/next controls with morphicons morphing animation, equalizer animation, and a playlist modal
-- **Interactive Project Modals** — Detailed project views with image carousels, hover captions (title + description), per-project accent colors (top line, tags, dots, close button), CLI terminal outputs, collaborator links, and tech stack tags
-- **Dock Navigation** — Fixed navigation with section-aware scroll offsets for both desktop and mobile viewports
-- **Fully Responsive** — Adaptive layouts for mobile with stacked cards, top navigation bar, and optimized typography
+- **Cinematic Preloader:** Animated countdown with SVG VHS noise and film strip borders that fade in after loading
+- **Scroll-Driven Animations:** Every section uses Framer Motion scroll-triggered reveals, parallax effects, and clip-path transitions
+- **Floating Music Player:** YouTube IFrame API integration with a 10-song playlist, play/pause/prev/next controls with morphicons morphing animation, equalizer animation, and a playlist modal
+- **Interactive Project Modals:** Detailed project views with image carousels, hover captions (title + description), per-project accent colors (top line, tags, dots, close button), CLI terminal outputs, collaborator links, and tech stack tags
+- **Mobile Image Lightbox:** Fullscreen image viewer on mobile with fixed caption and navigation controls, per-project accent colors (title gradient, dot colors, arrow hover), keyboard support (Escape, arrow keys), and video playback
+- **Project Card Hover Effects:** Space Orbit Dynamics shows falling meteor streaks, CLI cryptography projects display a Matrix-style binary rain
+- **Dock Navigation:** Fixed navigation with section-aware scroll offsets for both desktop and mobile viewports
+- **Fully Responsive:** Adaptive layouts for mobile with stacked cards, top navigation bar, and optimized typography
 
 ---
 
@@ -82,10 +84,11 @@ camilo-at-repository/
 │   ├── App.css                     ← Film strip borders, modal open state
 │   ├── index.css                   ← Global CSS, fonts, color palette
 │   ├── components/
-│   │   ├── Dock/                   ← Fixed navigation (PC: right, Mobile: top bar)
-│   │   ├── Hero/                   ← Hero section with clip-path name reveal
-│   │   ├── Particles/              ← Floating ambient particles
-│   │   └── Preloader/              ← Countdown preloader with film strips
+│   │   ├── Dock/                     ← Fixed navigation (PC: right, Mobile: top bar)
+│   │   ├── Hero/                     ← Hero section with clip-path name reveal
+│   │   ├── ImageLightbox/            ← Mobile fullscreen image viewer with accent colors
+│   │   ├── Particles/                ← Floating ambient particles
+│   │   └── Preloader/                ← Countdown preloader with film strips
 │   ├── sections/
 │   │   ├── Story/                  ← About Me (ACT II)
 │   │   ├── Work/                   ← Main projects with carousel (ACT III)
