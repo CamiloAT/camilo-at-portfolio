@@ -147,6 +147,6 @@
 }
 
 .lightbox-dot--active {
-  background: var(--dot-color, var(--modal-accent-solid));
+  background: var(--dot-active-bg, var(--dot-color, var(--modal-accent-solid)));
   border-color: var(--dot-color, var(--modal-accent-solid));
 }

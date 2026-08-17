@@ -797,8 +797,15 @@ const Projects = () => {
         onPrev={prevImage}
         onNext={nextImage}
         onDotClick={setCurrentImageIndex}
-        dotColors={modalDotColors}
-        accentVars={{
+        dotColors={selectedProject?.stars ? null : modalDotColors}
+        accentVars={selectedProject?.stars ? {
+          '--modal-accent-first': '#1e1547',
+          '--modal-accent-second': '#e8a830',
+          '--modal-accent-solid': '#e8a830',
+          '--modal-accent-grad': '#e8a830',
+          '--dot-color': '#1e1547',
+          '--dot-active-bg': '#e8a830',
+        } : {
           '--modal-accent-first': gradFirst,
           '--modal-accent-second': gradSecond,
           '--modal-accent-solid': modalAccent,
