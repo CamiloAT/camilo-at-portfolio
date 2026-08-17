@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import ImageLightbox from '../../components/ImageLightbox/ImageLightbox'
 import './Work.css'
 
 const PROJECTS = [
@@ -185,6 +186,8 @@ const Work = () => {
   const [hintedProject, setHintedProject] = useState(null)
   const [hintPos, setHintPos] = useState({ x: 0, y: 0 })
   const hintTimerRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   const hexToRgb = (hex) => {
     let h = hex.replace('#', '')
@@ -249,6 +252,13 @@ const Work = () => {
     })
     return () => { preloaded.forEach((v) => { v.src = ''; v.remove() }) }
   }, [selectedProject])
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const headerY = useTransform(scrollYProgress, [0, 0.3], [40, 0])
   const headerOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1])
@@ -514,7 +524,7 @@ const Work = () => {
 
                 <div className="work__modal-carousel">
                   <button className="work__modal-arrow work__modal-arrow--left" onClick={prevImage}>‹</button>
-                  <div className="work__modal-image">
+                  <div className="work__modal-image" onClick={isMobile ? () => setLightboxOpen(true) : undefined} style={isMobile ? { cursor: 'pointer' } : undefined}>
                     {/\.(mp4|webm|ogg)$/i.test(selectedProject.images[currentImageIndex]) ? (
                       <video
                         src={selectedProject.images[currentImageIndex]}
@@ -631,6 +641,17 @@ const Work = () => {
         </AnimatePresence>,
         document.body
       )}
+
+      <ImageLightbox
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={selectedProject ? selectedProject.images : []}
+        captions={selectedProject ? selectedProject.captions : []}
+        currentIndex={currentImageIndex}
+        onPrev={prevImage}
+        onNext={nextImage}
+        dotColors={modalDotColors}
+      />
     </section>
   )
 }

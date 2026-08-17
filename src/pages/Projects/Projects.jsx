@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import ImageLightbox from '../../components/ImageLightbox/ImageLightbox'
 import './Projects.css'
 
 const MORE_PROJECTS = [
@@ -417,6 +418,8 @@ const Projects = () => {
   const [hintedProject, setHintedProject] = useState(null)
   const [hintPos, setHintPos] = useState({ x: 0, y: 0 })
   const hintTimerRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   const hexToRgb = (hex) => {
     let h = hex.replace('#', '')
@@ -450,6 +453,13 @@ const Projects = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
   }, [])
 
   useEffect(() => {
@@ -654,7 +664,7 @@ const Projects = () => {
                 {selectedProject.images.length > 0 && (
                   <div className="projects-page__modal-carousel">
                     <button className="projects-page__modal-arrow projects-page__modal-arrow--left" onClick={prevImage}>‹</button>
-                    <div className="projects-page__modal-image">
+                    <div className="projects-page__modal-image" onClick={isMobile ? () => setLightboxOpen(true) : undefined} style={isMobile ? { cursor: 'pointer' } : undefined}>
                       {/\.(mp4|webm|ogg)$/i.test(selectedProject.images[currentImageIndex]) ? (
                         <video
                           src={selectedProject.images[currentImageIndex]}
@@ -777,6 +787,17 @@ const Projects = () => {
         </AnimatePresence>,
         document.body
       )}
+
+      <ImageLightbox
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={selectedProject ? selectedProject.images : []}
+        captions={selectedProject ? selectedProject.captions : []}
+        currentIndex={currentImageIndex}
+        onPrev={prevImage}
+        onNext={nextImage}
+        dotColors={modalDotColors}
+      />
     </div>
   )
 }

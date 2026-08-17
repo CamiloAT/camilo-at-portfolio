@@ -892,17 +892,21 @@
   }
 
   .projects-page__modal-arrow {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
   }
 
   .projects-page__modal-arrow--left {
-    left: 8px;
+    left: 6px;
   }
 
   .projects-page__modal-arrow--right {
-    right: 8px;
+    right: 6px;
+  }
+
+  .projects-page__modal-img-caption {
+    display: none;
   }
 
   .projects-page__modal-desc {
