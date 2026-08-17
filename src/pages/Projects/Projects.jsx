@@ -452,6 +452,21 @@ const Projects = () => {
     window.scrollTo(0, 0)
   }, [])
 
+  useEffect(() => {
+    if (!selectedProject) return
+    const videoUrls = selectedProject.images.filter((img) => /\.(mp4|webm|ogg)$/i.test(img))
+    const preloaded = videoUrls.map((url) => {
+      const v = document.createElement('video')
+      v.src = url
+      v.preload = 'auto'
+      v.muted = true
+      v.style.display = 'none'
+      document.body.appendChild(v)
+      return v
+    })
+    return () => { preloaded.forEach((v) => { v.src = ''; v.remove() }) }
+  }, [selectedProject])
+
   const openModal = (project) => {
     setSelectedProject(project)
     setCurrentImageIndex(0)
