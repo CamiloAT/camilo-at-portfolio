@@ -252,6 +252,7 @@ const MORE_PROJECTS = [
     fullDescription: 'Funcion de hash criptografica personalizada construida desde cero en Python, diseñada para procesar archivos grandes de forma determinista en bloques con mecanismos de encadenamiento, generando un valor de integridad unico de 256 bits. Implementa compresion personalizada con 32 rondas de mezcla usando operaciones XOR, rotaciones bit a bit y sumas modulares, procesamiento en bloques de 512 bits para manejar archivos grandes sin desbordamiento de memoria, padding Merkle-Damgard para prevenir extension de longitud, validacion automatica del efecto avalancha y benchmarking contra SHA-256 nativo de Python.',
     logo: null,
     accent: '#6b7280',
+    cli: true,
     tags: ['Python', 'Cryptography', 'Hashing', 'SHA-256'],
     collaborators: [
       { name: 'Diego Fernando Aguirre Tenjo', github: 'https://github.com/elcokiin' },
@@ -299,6 +300,7 @@ implementacion: Python puro (sin dependencias externas)`,
     fullDescription: 'Sistema de cifrado grafico que implementa un algoritmo de bloque personalizado basado en una Red de Sustitucion-Permutacion (SPN), diseñado especificamente para asegurar codigos de rastreo de paquetes en sistemas logisticos heredados. Utiliza manipulaciones de cadenas y operaciones a nivel de bits sobre un alfabeto de 36 caracteres (A-Z, 0-9) con bloques fijos de 20 caracteres. Implementa los principios de Shannon (confusion y difusion) con 32 rondas de sustitucion encadenada y permutacion biyectiva, validacion de efecto avalancha y analisis de resistencia a criptoanalisis diferencial y lineal. Incluye GUI con tkinter para cifrar, generar reportes completos de rondas y analizar difusion.',
     logo: null,
     accent: '#e5e7eb',
+    cli: true,
     tags: ['Python', 'Tkinter', 'SPN', 'Cryptography'],
     collaborators: [
       { name: 'Diego Fernando Aguirre Tenjo', github: 'https://github.com/elcokiin' },
@@ -367,6 +369,7 @@ Evaluacion : BUENO
     fullDescription: 'Sistema de cifrado y descifrado por linea de comandos que implementa los algoritmos de Caesar y Vigenere sobre un alfabeto extendido de 99 simbolos incluyendo letras, digitos, puntuacion y caracteres especiales. Soporta normalizacion flexible (strict/lax), entrada y salida por archivos o stdin/stdout, y incluye una suite de pruebas automatizadas con 22 casos de prueba. Implementado en Python puro sin dependencias externas.',
     logo: null,
     accent: '#a1a1aa',
+    cli: true,
     tags: ['Python', 'Caesar', 'Vigenere', 'CLI'],
     collaborators: [
       { name: 'Diego Fernando Aguirre Tenjo', github: 'https://github.com/elcokiin' },
@@ -559,6 +562,18 @@ const Projects = () => {
                   <div className="projects-page__item-meteor projects-page__item-meteor--b" />
                   <div className="projects-page__item-meteor projects-page__item-meteor--c" />
                 </>
+              )}
+              {project.cli && (
+                <div className="projects-page__item-binary">
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '3%', '--col-speed': '5.5s', '--col-delay': '0s', '--col-size': '14px', '--col-opacity': '0.10' }}>011010010110010101101110</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '14%', '--col-speed': '8.5s', '--col-delay': '-2.3s', '--col-size': '12px', '--col-opacity': '0.07' }}>10110100110101100101010110</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '26%', '--col-speed': '5s', '--col-delay': '-1.1s', '--col-size': '16px', '--col-opacity': '0.13' }}>01101001</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '38%', '--col-speed': '9.5s', '--col-delay': '-4.5s', '--col-size': '11px', '--col-opacity': '0.06' }}>11010100101101001011010010110</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '50%', '--col-speed': '6.5s', '--col-delay': '-3.0s', '--col-size': '15px', '--col-opacity': '0.09' }}>010101101001</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '63%', '--col-speed': '5.8s', '--col-delay': '-0.7s', '--col-size': '13px', '--col-opacity': '0.11' }}>100101101001011010010110</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '76%', '--col-speed': '9s', '--col-delay': '-2.8s', '--col-size': '17px', '--col-opacity': '0.08' }}>011010010110</span>
+                  <span className="projects-page__item-binary-col" style={{ '--col-left': '89%', '--col-speed': '4.8s', '--col-delay': '-1.8s', '--col-size': '12px', '--col-opacity': '0.12' }}>1101010010110100101</span>
+                </div>
               )}
               <div className="projects-page__item-left">
                 <span className="projects-page__item-number">
