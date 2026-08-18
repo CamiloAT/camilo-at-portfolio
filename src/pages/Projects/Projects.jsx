@@ -113,11 +113,11 @@ const MORE_PROJECTS = [
       '/projects/pseudorandom-number-generator/app-photo-5.webp',
     ],
     captions: [
-      { title: 'Generador Congruencial', desc: 'Produce números pseudoaleatorios con LCG y multiplicativo.' },
-      { title: 'Prueba Chi-Cuadrado', desc: 'Evalúa la uniformidad de la serie con esta prueba estadística.' },
-      { title: 'Prueba de Kolmogorov', desc: 'Compara la distribución generada contra la uniforme teórica.' },
-      { title: 'Prueba de Póker', desc: 'Verifica la independencia de los números con el método de Póker.' },
-      { title: 'Carrusel de Gráficas', desc: 'Visualizaciones animadas con tablas de frecuencia dinámicas.' },
+      { title: 'Pantalla Principal', desc: 'Acceso al laboratorio de simulación para pruebas de uniformidad e independencia en números pseudoaleatorios.' },
+      { title: 'Configuración de Parámetros', desc: 'Panel para la selección de algoritmos (como Congruencial Lineal) y la definición de semillas y constantes.' },
+      { title: 'Procesamiento en Tiempo Real', desc: 'Animación interactiva del cálculo y generación secuencial de variables aleatorias.' },
+      { title: 'Dashboard Estadístico', desc: 'Visualización de la tabla de valores generados, cálculo de métricas (μ, σ², periodo) y gráfico de dispersión.' },
+      { title: 'Análisis Comparativo de Modelos', desc: 'Comparativa gráfica de trayectorias y pruebas de ajuste (χ², Kolmogorov-Smirnov) entre métodos.' },
     ],
   },
   {
