@@ -56,12 +56,12 @@ const MORE_PROJECTS = [
       '/projects/inject-and-fill/app-photo-6.webp',
     ],
     captions: [
-      { title: 'Side Panel', desc: 'Perfiles con campos mapeados listos para rellenar cualquier formulario.' },
-      { title: 'Editor de Perfiles', desc: 'Configura campos, valores y secuencias de ejecución por perfil.' },
-      { title: 'Detector de Campos', desc: 'Detecta inputs, selects, checkboxes y botones en la página.' },
-      { title: 'Selector Visual', desc: 'Selecciona elementos directamente sobre la página con un picker.' },
-      { title: 'Drag and Drop', desc: 'Reordena los pasos de cada perfil arrastrando y soltando.' },
-      { title: 'Motor de Ejecución', desc: 'Inyecta valores simulando eventos de React, Angular y Vue.' },
+      { title: 'Panel Principal', desc: 'Acceso rápido al perfil activo, historial de perfiles usados recientemente y acciones de recarga de página.' },
+      { title: 'Gestión de Perfiles', desc: 'Lista de perfiles guardados con el total de acciones mapeadas.' },
+      { title: 'Creación de Perfiles', desc: 'Formulario para registrar nuevos perfiles.' },
+      { title: 'Ajustes de Ejecución', desc: 'Panel para configurar el modo de rellenado (secuencial o simultáneo) y los tiempos de retraso entre acciones.' },
+      { title: 'Ejecución en Progreso', desc: 'Indicador visual del estado de rellenado y avance de los pasos en tiempo real.' },
+      { title: 'Confirmación de Éxito', desc: 'Pantalla final de finalización tras inyectar y completar exitosamente la secuencia en el formulario.' },
     ],
   },
   {
