@@ -27,11 +27,11 @@ const MORE_PROJECTS = [
       '/projects/unfollow-spy/app-photo-5.webp',
     ],
     captions: [
-      { title: 'Informe de Followers', desc: 'Cruza tus listas exportadas de Meta para detectar traidores al instante.' },
-      { title: 'Comparativa', desc: 'Análisis cruzado entre seguidores y seguidos con marcas UNIX de tiempo.' },
-      { title: 'Reporte PDF', desc: 'Descarga un informe detallado de tu auditoría en PDF.' },
-      { title: 'Modo Oscuro', desc: 'Interfaz con tema oscuro y persistencia en localStorage.' },
-      { title: 'Tutorial Interactivo', desc: 'Recorrido guiado de 22 pasos para entender la herramienta.' },
+      { title: 'Página de Inicio', desc: 'Presentación de UnfollowSpy enfocada en la privacidad y el procesamiento local de datos de Instagram.' },
+      { title: 'Sección de Características', desc: 'Explicación visual de la exportación oficial desde Meta, seguridad local y precisión del análisis.' },
+      { title: 'Guía Paso a Paso', desc: 'Tutorial interactivo para solicitar y descargar el archivo JSON oficial desde la configuración de Instagram.' },
+      { title: 'Dashboard de Resultados', desc: 'Panel interactivo con filtros, buscador y listado detallado de cuentas que no te devuelven el seguimiento.' },
+      { title: 'Exportación de Reportes', desc: 'Modal de configuración para seleccionar las categorías de datos e historial a incluir en el documento PDF.' },
     ],
   },
   {
