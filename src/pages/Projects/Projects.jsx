@@ -206,12 +206,12 @@ const MORE_PROJECTS = [
       '/projects/smtp-simulator/app-photo-6.webp',
     ],
     captions: [
-      { title: 'Simulación Estática', desc: 'Pares de comandos y respuestas SMTP para aprender lo básico.' },
-      { title: 'Compositor de Correos', desc: 'Configura remitente, destinatario, asunto y mensaje del correo.' },
-      { title: 'Topología de Red', desc: 'Canvas drag-and-drop para construir tus propias topologías.' },
-      { title: 'Panel de Log', desc: 'Registro en tiempo real de cada comando y respuesta SMTP.' },
-      { title: 'Simulación Dinámica', desc: 'Envía el correo a través de clientes y servidores relay.' },
-      { title: 'Ejemplo Pre-construido', desc: 'Topología lista para ejecutar una simulación al instante.' },
+      { title: 'Simulación Estática Básica', desc: 'Interfaz principal para configurar mensajes y explorar comandos SMTP paso a paso.' },
+      { title: 'Flujo de Comunicación', desc: 'Registro secuencial de comandos y respuestas del servidor (DATA, QUIT, 250 OK).' },
+      { title: 'Pantalla de Transición', desc: 'Animación de carga hacia el simulador interactivo de topologías dinámicas.' },
+      { title: 'Lienzo de Topología Dinámica', desc: 'Entorno drag-and-drop para conectar clientes y servidores relay en una red personalizada.' },
+      { title: 'Compositor de Correos', desc: 'Ventana modal para redactar el remitente, destinatario y contenido en la red.' },
+      { title: 'Log de Red en Tiempo Real', desc: 'Consola interactiva que muestra el intercambio de datos entre los nodos de la topología.' },
     ],
   },
   {
