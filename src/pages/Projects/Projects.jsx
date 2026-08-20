@@ -237,10 +237,10 @@ const MORE_PROJECTS = [
       '/projects/native-mobile-resources/app-photo-4.webp',
     ],
     captions: [
-      { title: 'Detección de Rostros', desc: 'Bounding boxes en tiempo real con Shape Detection API.' },
-      { title: 'Escáner QR y Barras', desc: 'Detecta códigos con identificación automática de URLs.' },
-      { title: 'Sensores', desc: 'Orientación y movimiento del dispositivo en 3D interactivo.' },
-      { title: 'Captura y Audio', desc: 'Grabación de pantalla y audio con visualizador de onda.' },
+      { title: 'Panel Principal de Capacidades', desc: 'Menú de acceso a las demostraciones interactivas de las APIs nativas del navegador.' },
+      { title: 'Transiciones de Vista Fluidas', desc: 'Demostración de la View Transitions API para animar cambios de interfaz tipo app nativa.' },
+      { title: 'Autenticación Web (WebAuthn)', desc: 'Integración con llaves de acceso, huella dactilar y autenticación biométrica del sistema.' },
+      { title: 'Grabación de Audio con Visualizador', desc: 'Captura de voz en tiempo real con onda de sonido interactiva mediante Web Audio API.' },
     ],
   },
   {
