@@ -54,6 +54,8 @@ const MORE_PROJECTS = [
       '/projects/inject-and-fill/app-photo-4.webp',
       '/projects/inject-and-fill/app-photo-5.webp',
       '/projects/inject-and-fill/app-photo-6.webp',
+      '/projects/inject-and-fill/app-photo-7.webp',
+      '/projects/inject-and-fill/app-photo-8.webp',
     ],
     captions: [
       { title: 'Panel Principal', desc: 'Acceso rápido al perfil activo, historial de perfiles usados recientemente y acciones de recarga de página.' },
@@ -62,6 +64,8 @@ const MORE_PROJECTS = [
       { title: 'Ajustes de Ejecución', desc: 'Panel para configurar el modo de rellenado (secuencial o simultáneo) y los tiempos de retraso entre acciones.' },
       { title: 'Ejecución en Progreso', desc: 'Indicador visual del estado de rellenado y avance de los pasos en tiempo real.' },
       { title: 'Confirmación de Éxito', desc: 'Pantalla final de finalización tras inyectar y completar exitosamente la secuencia en el formulario.' },
+      { title: 'Ejecución Parcial', desc: 'Notificación de proceso completado con algunas acciones fallidas.' },
+      { title: 'Fallo Total', desc: 'Pantalla de error cuando no se logra completar ninguna acción.' },
     ],
   },
   {
