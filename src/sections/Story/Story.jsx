@@ -86,7 +86,10 @@ const Story = () => {
             >
               <div className="story__visual-frame">
                 <div className="story__visual-inner">
-                  <span className="story__visual-placeholder" />
+                  <img src="/me.png" alt="Camilo AT" className="story__portrait" />
+                  <div className="story__portrait-overlay">
+                    <span className="story__portrait-name">Camilo AT</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
