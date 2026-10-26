@@ -14,15 +14,15 @@ const INTERESTS = [
 ]
 
 const PLAYLIST = [
-  { title: 'Ojitos Playa', artist: 'Nanpa Básico', youtubeId: 'WNj85EwKsAg' },
+  { title: 'Retrica', artist: 'Lucho RK', youtubeId: 'fMNlg7ypU0Q' },
   { title: 'La Graciosa', artist: 'Quevedo', youtubeId: 'Kev3r6W4TPo' },
   { title: 'Own My Mind', artist: 'Maneskin', youtubeId: 'LRApJG5WdIg' },
   { title: 'El Hexxo', artist: 'Feid', youtubeId: 'hgSNktUvOuc' },
   { title: 'Amé', artist: 'Christian Nodal', youtubeId: '2JkU7obnr5A' },
   { title: 'Understand', artist: 'BoyWithUke', youtubeId: 'euD9Mr2M7Mw' },
-  { title: 'Stolen Dance', artist: 'Milky Chance', youtubeId: 'JnYr3wlVF08' },
+  { title: 'Freaks', artist: 'Surfe Curse', youtubeId: 'cYT325Fe9zU' },
   { title: 'Guaya', artist: 'Lucho RK & Quevedo', youtubeId: 'OlV-SJEd_oo' },
-  { title: 'Te vi en mis pesadillas', artist: 'Alvaro Diaz', youtubeId: 'LIBVl4uSmC4' },
+  { title: 'Protagonista', artist: 'LIT Killah & Paulo Londra', youtubeId: 'dIIiiWmdNKI' },
   { title: 'Tus Vueltas', artist: 'Milo J', youtubeId: 'PmVejpfw_yU' },
 ]
 
