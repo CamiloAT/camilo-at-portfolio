@@ -19,6 +19,7 @@ const Outro = () => {
 
     if (clicksRef.current.length >= CLICK_THRESHOLD) {
       clicksRef.current = []
+      window.getSelection()?.removeAllRanges()
       setShowEasterEgg(true)
     }
   }, [])
@@ -26,6 +27,7 @@ const Outro = () => {
   useEffect(() => {
     if (showEasterEgg) {
       document.body.style.overflow = 'hidden'
+      window.getSelection()?.removeAllRanges()
     } else {
       document.body.style.overflow = ''
     }
@@ -125,6 +127,7 @@ const Outro = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 transition={{ duration: 0.4, type: 'spring', damping: 20 }}
+                onMouseDown={(e) => e.preventDefault()}
                 onClick={(e) => e.stopPropagation()}
               >
                 <button className="easter-egg__close" onClick={() => setShowEasterEgg(false)}>
